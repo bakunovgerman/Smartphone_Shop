@@ -13,4 +13,7 @@
     <string name="search">Search</string>
     <string name="hot_sales">Hot sales</string>
     <string name="best_seller">Best Seller</string>
+    <string name="image_phone_description">Изображение смартфона</string>
+    <string name="tools_text_price_phone">$1,047</string>
+    <string name="tools_text_name_phone">Samsung Galaxy s20 Ultra</string>
 </resources>

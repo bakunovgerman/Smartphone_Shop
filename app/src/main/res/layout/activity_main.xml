@@ -7,7 +7,6 @@
     android:background="@color/bgColorScreen"
     tools:context=".MainActivity">
 
-
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -162,12 +161,16 @@
                 app:layout_constraintBaseline_toBaselineOf="@id/tvBestSellerTitle"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvBestSellerTitle"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="16dp"/>
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintEnd_toEndOf="@id/guideLine_2"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_phone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

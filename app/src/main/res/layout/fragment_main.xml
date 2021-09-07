@@ -1,14 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColorScreen"
     tools:context=".MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/guide_line_margin"/>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/guide_line_margin"/>
+
+            <Button
+                android:id="@+id/btnLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zihuatanejo, Gro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                style="@style/btn_location" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                android:padding="15dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/btnLocation"
+                android:src="@drawable/ic_filters"
+                android:contentDescription="@string/filters" />
+
+            <TextView
+                android:id="@+id/tvSelectViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_category"
+                style="@style/TitleTextView"
+                app:layout_constraintStart_toEndOf="@id/guideLine_1"
+                app:layout_constraintTop_toBottomOf="@id/btnLocation"
+                android:layout_marginTop="5dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                style="@style/OrangeTextButton"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvSelectViewTitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSelectViewTitle"
+                android:layout_marginTop="24dp"
+                tools:listitem="@layout/item_category"
+                android:orientation="horizontal"
+                tools:itemCount="4"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:hint="@string/search"
+                app:layout_constraintTop_toBottomOf="@id/rvCategory"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintEnd_toStartOf="@id/btnCode"
+                android:background="@drawable/bg_edit_text_search"
+                android:fontFamily="@font/markpro_regular"
+                android:drawableStart="@drawable/ic_search"
+                android:paddingStart="25dp"
+                android:drawablePadding="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginTop="35dp"
+                tools:ignore="RtlSymmetry"
+                android:elevation="1dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCode"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:layout_marginEnd="30dp"
+                app:icon="@drawable/ic_code"
+                android:background="@drawable/circle_orange"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBaseline_toBaselineOf="@id/etSearch"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                app:layout_constraintStart_toEndOf="@id/etSearch"/>
+
+            <TextView
+                android:id="@+id/tvHotSalesTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hot_sales"
+                style="@style/TitleTextView"
+                app:layout_constraintStart_toEndOf="@id/guideLine_1"
+                app:layout_constraintTop_toBottomOf="@id/etSearch"
+                android:layout_marginTop="25dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                style="@style/OrangeTextButton"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvHotSalesTitle"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp2HotSales"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHotSalesTitle"/>
+
+            <TextView
+                android:id="@+id/tvBestSellerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/best_seller"
+                style="@style/TitleTextView"
+                app:layout_constraintStart_toEndOf="@id/guideLine_1"
+                app:layout_constraintTop_toBottomOf="@id/vp2HotSales"
+                android:layout_marginTop="11dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                style="@style/OrangeTextButton"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                app:layout_constraintBaseline_toBaselineOf="@id/tvBestSellerTitle"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/tvBestSellerTitle"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintEnd_toEndOf="@id/guideLine_2"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="20dp"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_phone"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
