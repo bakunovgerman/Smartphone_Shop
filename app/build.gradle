@@ -3,6 +3,8 @@ plugins {
     id 'kotlin-android'
 }
 
+
+
 android {
     compileSdk 30
 
@@ -29,7 +31,13 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
+
 }
+
+
 
 dependencies {
 

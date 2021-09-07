@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Smartphone_Shop" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Smartphone_Shop" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/cyan_dark</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,4 +13,52 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="btn_location" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="backgroundTint">@color/bgColorScreen</item>
+        <item name="android:textColor">@color/cyan_dark</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:fontFamily">@font/markpro_medium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+        <item name="icon">@drawable/ic_gps</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_down</item>
+        <item name="iconPadding">10dp</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton.IconOnly" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:minWidth">48dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="Widget.App.Button.OutlinedButton.IconOnly.ItemCategory" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconPadding">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:paddingLeft">30dp</item>
+        <item name="android:paddingRight">30dp</item>
+        <item name="android:minWidth">71dp</item>
+        <item name="android:minHeight">71dp</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="OrangeTextButton" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="fontFamily">@font/markpro_regular</item>
+    </style>
+
+    <style name="TitleTextView">
+        <item name="android:textColor">@color/cyan_dark</item>
+        <item name="fontFamily">@font/markpro_bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
 </resources>
