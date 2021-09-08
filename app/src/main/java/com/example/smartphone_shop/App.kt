@@ -2,6 +2,7 @@ package com.example.smartphone_shop
 
 import android.app.Application
 import android.content.Context
+import com.example.smartphone_shop.repository.retrofit.ApiService
 
 class App : Application() {
 
@@ -13,6 +14,8 @@ class App : Application() {
     init {
         instance = this
     }
+
+    val apiService = ApiService.create()
 
     companion object {
         lateinit var instance: App

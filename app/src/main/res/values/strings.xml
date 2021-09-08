@@ -16,4 +16,8 @@
     <string name="image_phone_description">Изображение смартфона</string>
     <string name="tools_text_price_phone">$1,047</string>
     <string name="tools_text_name_phone">Samsung Galaxy s20 Ultra</string>
+    <string name="home_store_img_description">Картинка слайдера Home Store</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="api_key">2aa8e910f6c4ade81a84c9333ffc7bf6a398e</string>
+    <string name="shadow">Тень</string>
 </resources>
