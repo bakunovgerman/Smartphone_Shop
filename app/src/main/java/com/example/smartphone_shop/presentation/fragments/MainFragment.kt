@@ -19,8 +19,6 @@ import com.example.smartphone_shop.presentation.adapter.HomeStoreAdapter
 import com.example.smartphone_shop.presentation.adapter.items_decoration.GridSpacingItemDecoration
 import com.example.smartphone_shop.presentation.adapter.items_decoration.SpacesItemDecoration
 import com.example.smartphone_shop.repository.data.CategoryDto
-import com.example.smartphone_shop.repository.retrofit.entities.BestSeller
-import com.example.smartphone_shop.repository.retrofit.entities.HomeStore
 
 class MainFragment : Fragment() {
 
@@ -52,7 +50,11 @@ class MainFragment : Fragment() {
 
         initView(view)
         initSubscribe()
+        loadData()
 
+    }
+
+    private fun loadData() {
         // загружаем данные
         mainViewModel.getCategory()
         mainViewModel.getMainInfo(getString(R.string.api_key))

@@ -1,6 +1,7 @@
 package com.example.smartphone_shop.presentation.adapter
 
 import android.annotation.SuppressLint
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,6 +16,12 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.example.smartphone_shop.App
 import com.example.smartphone_shop.R
 import com.example.smartphone_shop.repository.retrofit.entities.BestSeller
+import android.text.style.UnderlineSpan
+
+import android.text.SpannableString
+import android.text.SpannableStringBuilder
+import android.text.style.StrikethroughSpan
+
 
 class BestSellerAdapter(private val circularProgressDrawable: CircularProgressDrawable) :
     RecyclerView.Adapter<BestSellerAdapter.BestSellerViewHolder>() {
@@ -49,11 +56,10 @@ class BestSellerAdapter(private val circularProgressDrawable: CircularProgressDr
                     App.applicationContext.getString(R.string.phone_price),
                     bestSeller.discountPrice.toString()
                 )
-            priceWithoutSaleTextView.text =
-                String.format(
-                    App.applicationContext.getString(R.string.phone_price),
-                    bestSeller.priceWithoutDiscount.toString()
-                )
+            priceWithoutSaleTextView.text = String.format(
+                App.applicationContext.getString(R.string.phone_price),
+                bestSeller.priceWithoutDiscount.toString()
+            )
             namePhoneTextView.text = bestSeller.title
         }
     }

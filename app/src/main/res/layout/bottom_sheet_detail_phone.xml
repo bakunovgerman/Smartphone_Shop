@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvBottomSheetBehavior"
+    style="@style/MyCardView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="470dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/NestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/guide_line_margin" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideLine_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/guide_line_margin" />
+
+            <TextView
+                android:id="@+id/tvNamePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/markpro_bold"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Galaxy Note 20 Ultra"
+                android:textColor="@color/cyan_dark"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCart"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_favorite_off"
+                android:backgroundTint="@color/cyan_dark"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvNamePhone"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.cardview.widget.CardView>
