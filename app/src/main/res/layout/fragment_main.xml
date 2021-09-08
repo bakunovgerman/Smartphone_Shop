@@ -162,6 +162,7 @@
                 app:layout_constraintBaseline_toBaselineOf="@id/tvBestSellerTitle"/>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPhones"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvBestSellerTitle"
@@ -170,8 +171,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="20dp"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_phone"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
+                tools:listitem="@layout/item_phone"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

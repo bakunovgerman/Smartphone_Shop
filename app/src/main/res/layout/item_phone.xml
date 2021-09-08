@@ -15,10 +15,32 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             tools:srcCompat="@tools:sample/avatars"
+            android:scaleType="centerCrop"
             android:contentDescription="@string/image_phone_description"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnFavorite"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:cardCornerRadius="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="13dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:focusable="true">
+
+            <ImageView
+                android:id="@+id/imgBtnFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_favorite_on"
+                android:layout_gravity="center"/>
+
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/tvPriceWithSale"
@@ -34,6 +56,7 @@
             app:layout_constraintTop_toBottomOf="@id/imgPhone"/>
 
         <TextView
+            android:id="@+id/tvPriceWithoutSale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="@string/tools_text_price_phone"
@@ -45,7 +68,7 @@
             app:layout_constraintBaseline_toBaselineOf="@id/tvPriceWithSale"/>
 
         <TextView
-            android:id="@+id/tvPriceWithoutSale"
+            android:id="@+id/tvNamePhone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="@string/tools_text_name_phone"

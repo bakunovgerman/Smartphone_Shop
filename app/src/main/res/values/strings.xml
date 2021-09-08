@@ -20,4 +20,5 @@
     <string name="buy_now">Buy Now</string>
     <string name="api_key">2aa8e910f6c4ade81a84c9333ffc7bf6a398e</string>
     <string name="shadow">Тень</string>
+    <string name="phone_price">%s$</string>
 </resources>
