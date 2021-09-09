@@ -16,7 +16,8 @@ import com.example.smartphone_shop.App
 import com.example.smartphone_shop.R
 import com.example.smartphone_shop.repository.retrofit.entities.HomeStore
 
-class HomeStoreAdapter(private val circularProgressDrawable: CircularProgressDrawable): RecyclerView.Adapter<HomeStoreAdapter.HomeStoreViewHolder>() {
+class HomeStoreAdapter :
+    RecyclerView.Adapter<HomeStoreAdapter.HomeStoreViewHolder>() {
 
     private val list: MutableList<HomeStore> = ArrayList()
 
@@ -25,7 +26,18 @@ class HomeStoreAdapter(private val circularProgressDrawable: CircularProgressDra
         private val slideImageVIew: ImageView = itemView.findViewById(R.id.imgSlideHomeStore)
         private val newImageView: ImageView = itemView.findViewById(R.id.imgNew)
         private val titleSlideTextView: TextView = itemView.findViewById(R.id.tvTitleSlideHomeStore)
-        private val subTitleSlideTextView: TextView = itemView.findViewById(R.id.tvSubTitleSlideHomeStore)
+        private val subTitleSlideTextView: TextView =
+            itemView.findViewById(R.id.tvSubTitleSlideHomeStore)
+
+        // прогресс бар для Glide
+        private var circularProgressDrawable: CircularProgressDrawable =
+            CircularProgressDrawable(App.applicationContext)
+
+        init {
+            circularProgressDrawable.strokeWidth = 5f
+            circularProgressDrawable.centerRadius = 30f
+            circularProgressDrawable.start()
+        }
 
         fun bind(homeStore: HomeStore) {
             Glide
@@ -50,15 +62,15 @@ class HomeStoreAdapter(private val circularProgressDrawable: CircularProgressDra
         notifyDataSetChanged()
     }
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeStoreViewHolder {
-            val inflater = LayoutInflater.from(parent.context)
-            return HomeStoreViewHolder(inflater.inflate(R.layout.item_home_store, parent, false))
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeStoreViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
+        return HomeStoreViewHolder(inflater.inflate(R.layout.item_home_store, parent, false))
+    }
 
-        override fun onBindViewHolder(holder: HomeStoreViewHolder, position: Int) {
-            holder.bind(list[position])
-        }
+    override fun onBindViewHolder(holder: HomeStoreViewHolder, position: Int) {
+        holder.bind(list[position])
+    }
 
-        override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = list.size
 
 }

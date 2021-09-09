@@ -49,9 +49,24 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView(view)
+        initRv()
         initSubscribe()
         loadData()
 
+    }
+
+    private fun initRv() {
+        rvCategory.adapter = adapterCategory
+        adapterHomeStore = HomeStoreAdapter()
+        adapterBestSeller = BestSellerAdapter {
+
+        }
+        homeStoreViewPager2.adapter = adapterHomeStore
+        rvPhones.apply {
+            adapter = adapterBestSeller
+            layoutManager = GridLayoutManager(context, 2)
+            addItemDecoration(GridSpacingItemDecoration(12))
+        }
     }
 
     private fun loadData() {
@@ -63,22 +78,7 @@ class MainFragment : Fragment() {
     private fun initView(view: View) {
         rvCategory = view.findViewById(R.id.rvCategory)
         rvPhones = view.findViewById(R.id.rvPhones)
-        rvCategory.adapter = adapterCategory
-        context?.let {
-            val circularProgressDrawable = CircularProgressDrawable(it)
-            circularProgressDrawable.strokeWidth = 5f
-            circularProgressDrawable.centerRadius = 30f
-            circularProgressDrawable.start()
-            adapterHomeStore = HomeStoreAdapter(circularProgressDrawable)
-            adapterBestSeller = BestSellerAdapter(circularProgressDrawable)
-        }
         homeStoreViewPager2 = view.findViewById(R.id.vp2HomeStore)
-        homeStoreViewPager2.adapter = adapterHomeStore
-        rvPhones.apply {
-            adapter = adapterBestSeller
-            layoutManager = GridLayoutManager(context, 2)
-            addItemDecoration(GridSpacingItemDecoration(12))
-        }
     }
 
     private fun initCategoryData(listCategory: List<CategoryDto>) {
