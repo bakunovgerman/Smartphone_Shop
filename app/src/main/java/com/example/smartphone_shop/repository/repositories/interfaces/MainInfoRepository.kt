@@ -1,4 +1,4 @@
-package com.example.smartphone_shop.repository.repositories
+package com.example.smartphone_shop.repository.repositories.interfaces
 
 import com.example.smartphone_shop.repository.retrofit.entities.MainInfoResponse
 import retrofit2.Response

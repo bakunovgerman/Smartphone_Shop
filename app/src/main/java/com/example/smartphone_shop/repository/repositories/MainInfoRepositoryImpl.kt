@@ -1,5 +1,6 @@
 package com.example.smartphone_shop.repository.repositories
 
+import com.example.smartphone_shop.repository.repositories.interfaces.MainInfoRepository
 import com.example.smartphone_shop.repository.retrofit.ApiService
 import com.example.smartphone_shop.repository.retrofit.entities.MainInfoResponse
 import retrofit2.Response

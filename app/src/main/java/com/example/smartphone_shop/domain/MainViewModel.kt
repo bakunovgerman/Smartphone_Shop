@@ -9,7 +9,7 @@ import com.example.smartphone_shop.App
 import com.example.smartphone_shop.repository.data.CategoryDataSource
 import com.example.smartphone_shop.repository.data.CategoryDataSourceImpl
 import com.example.smartphone_shop.repository.data.CategoryDto
-import com.example.smartphone_shop.repository.repositories.MainInfoRepository
+import com.example.smartphone_shop.repository.repositories.interfaces.MainInfoRepository
 import com.example.smartphone_shop.repository.repositories.MainInfoRepositoryImpl
 import com.example.smartphone_shop.repository.retrofit.entities.BestSeller
 import com.example.smartphone_shop.repository.retrofit.entities.HomeStore

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:background="@color/bgColorScreen"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.ProductDetailPFragment"
+    tools:context=".presentation.fragments.ProductDetailFragment"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -26,7 +26,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_end="@dimen/guide_line_margin"/>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnBack"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -53,7 +53,7 @@
             android:textSize="18sp"
             android:textColor="@color/cyan_dark"/>
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnCart"
             android:layout_width="40dp"
             android:layout_height="40dp"
@@ -69,7 +69,7 @@
             android:layout_marginTop="20dp"/>
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/vp2Gallery"
+            android:id="@+id/vp2PhonePhotos"
             android:layout_width="match_parent"
             android:layout_height="335dp"
             app:layout_constraintStart_toStartOf="parent"

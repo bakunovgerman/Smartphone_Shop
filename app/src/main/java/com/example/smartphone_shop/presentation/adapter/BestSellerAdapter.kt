@@ -44,7 +44,7 @@ class BestSellerAdapter(
 
         // прогресс бар для Glide
         private var circularProgressDrawable: CircularProgressDrawable =
-            CircularProgressDrawable(App.applicationContext)
+            CircularProgressDrawable(itemView.context)
 
         init {
             phoneRootLayout.setOnClickListener { onMovieItemClick.invoke() }

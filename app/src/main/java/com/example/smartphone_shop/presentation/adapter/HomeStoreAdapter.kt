@@ -1,8 +1,6 @@
 package com.example.smartphone_shop.presentation.adapter
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,7 +21,7 @@ class HomeStoreAdapter :
 
     inner class HomeStoreViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        private val slideImageVIew: ImageView = itemView.findViewById(R.id.imgSlideHomeStore)
+        private val slideImageView: ImageView = itemView.findViewById(R.id.imgSlideHomeStore)
         private val newImageView: ImageView = itemView.findViewById(R.id.imgNew)
         private val titleSlideTextView: TextView = itemView.findViewById(R.id.tvTitleSlideHomeStore)
         private val subTitleSlideTextView: TextView =
@@ -45,7 +43,7 @@ class HomeStoreAdapter :
                 .load(homeStore.picture)
                 .placeholder(circularProgressDrawable)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(slideImageVIew)
+                .into(slideImageView)
             if (homeStore.isNew != null && homeStore.isNew) {
                 newImageView.visibility = View.VISIBLE
             } else {

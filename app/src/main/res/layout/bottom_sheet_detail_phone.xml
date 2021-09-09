@@ -22,8 +22,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideLine_1"
@@ -51,8 +50,8 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Galaxy Note 20 Ultra" />
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnCart"
+            <Button
+                android:id="@+id/btnFavorite"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:backgroundTint="@color/cyan_dark"
@@ -84,13 +83,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                app:layout_constraintBottom_toTopOf="@+id/viewPager"
+                app:layout_constraintBottom_toTopOf="@+id/vp2DetailPhone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rbPhone" />
 
             <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPager"
+                android:id="@+id/vp2DetailPhone"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,7 +102,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Select color and capacity"
-                app:layout_constraintTop_toBottomOf="@id/viewPager"
+                app:layout_constraintTop_toBottomOf="@id/vp2DetailPhone"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/markpro_medium"
@@ -127,13 +126,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_button_select_memory"
+                tools:listitem="@layout/item_memory_radio"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tvTitleSelectColor"
-                app:layout_constraintEnd_toStartOf="@id/guideLine_2"/>
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                android:layout_marginTop="15dp"/>
 
             <Button
+                android:id="@+id/btnAddCart"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 tools:text="Add to Cart $1,500.00"
