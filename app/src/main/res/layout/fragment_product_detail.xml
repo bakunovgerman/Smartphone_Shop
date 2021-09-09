@@ -1,74 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/fragmentDetailMovieRootView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/bgColorScreen"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragments.ProductDetailPFragment">
+    tools:context=".presentation.fragments.ProductDetailPFragment"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/guide_line_margin"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/guide_line_margin"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnBack"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/ic_arrow_back"
-        app:iconGravity="textStart"
-        app:iconPadding="-10dp"
-        app:layout_constraintStart_toEndOf="@id/guideLine_1"
-        app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/cyan_dark"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/product_details"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
-        app:layout_constraintStart_toEndOf="@id/btnBack"
-        app:layout_constraintEnd_toStartOf="@id/btnCart"
-        android:fontFamily="@font/markpro_medium"
-        android:textSize="18sp"
-        android:textColor="@color/cyan_dark"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnCart"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:insetLeft="0dp"
-        android:insetTop="0dp"
-        android:insetRight="0dp"
-        android:insetBottom="0dp"
-        app:icon="@drawable/ic_cart"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:layout_constraintEnd_toStartOf="@id/guideLine_2"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
-        android:layout_marginTop="20dp"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vp2Gallery"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="335dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnBack"
-        android:layout_marginTop="35dp"/>
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guide_line_margin"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideLine_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guide_line_margin"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_arrow_back"
+            app:iconGravity="textStart"
+            app:iconPadding="-10dp"
+            app:layout_constraintStart_toEndOf="@id/guideLine_1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/cyan_dark"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_details"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintEnd_toStartOf="@id/btnCart"
+            android:fontFamily="@font/markpro_medium"
+            android:textSize="18sp"
+            android:textColor="@color/cyan_dark"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCart"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:insetLeft="0dp"
+            android:insetTop="0dp"
+            android:insetRight="0dp"
+            android:insetBottom="0dp"
+            app:icon="@drawable/ic_cart"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnBack"
+            android:layout_marginTop="20dp"/>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp2Gallery"
+            android:layout_width="match_parent"
+            android:layout_height="335dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="35dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include layout="@layout/bottom_sheet_detail_phone"
+        android:id="@+id/bottom_sheet_detail_phone"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

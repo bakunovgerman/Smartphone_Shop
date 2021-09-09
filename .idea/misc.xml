@@ -6,9 +6,14 @@
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/bg_btn_category.xml" value="0.3074074074074074" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/bg_edit_text_search.xml" value="0.31203703703703706" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/bg_item_phone.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/black_circle.xml" value="0.29074074074074074" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/circle_item_category.xml" value="0.31203703703703706" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/circle_no_active_item_category.xml" value="0.31203703703703706" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/circle_orange.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/custom_ratingbar.xml" value="0.29444444444444445" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/custom_ratingbar_dm.xml" value="0.29444444444444445" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/custom_ratingbar_empty.xml" value="0.29444444444444445" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/custom_ratingbar_filled.xml" value="0.29444444444444445" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/ic_cart1.xml" value="0.3158974358974359" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/ic_computer.xml" value="0.3074074074074074" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/drawable/ic_search.xml" value="0.31203703703703706" />
@@ -18,7 +23,9 @@
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/bottom_sheet_detail_phone.xml" value="0.22" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/fragment_main.xml" value="0.3046875" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/fragment_product_detail.xml" value="0.22" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_button_select_memory.xml" value="0.6" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_category.xml" value="0.8333333333333334" />
+        <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_color.xml" value="1.0" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_home_store.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_phone.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/GermanB/Desktop/practick/Smartphone_Shop/app/src/main/res/layout/item_smartphone.xml" value="0.28442028985507245" />

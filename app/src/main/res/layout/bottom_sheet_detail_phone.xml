@@ -5,10 +5,10 @@
     android:id="@+id/cvBottomSheetBehavior"
     style="@style/MyCardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="470dp"
+    app:behavior_peekHeight="300dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <androidx.core.widget.NestedScrollView
@@ -45,26 +45,106 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/markpro_bold"
+                android:textColor="@color/cyan_dark"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="Galaxy Note 20 Ultra"
-                android:textColor="@color/cyan_dark"/>
+                tools:text="Galaxy Note 20 Ultra" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCart"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:backgroundTint="@color/cyan_dark"
                 android:insetLeft="0dp"
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
                 app:icon="@drawable/ic_favorite_off"
-                android:backgroundTint="@color/cyan_dark"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvNamePhone"
                 app:layout_constraintEnd_toStartOf="@id/guideLine_2" />
+
+            <RatingBar
+                android:id="@+id/rbPhone"
+                style="@style/CustomRatingBarDetailMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp"
+                android:layout_marginTop="7dp"
+                android:numStars="5"
+                android:rating="3.5"
+                android:stepSize="0.5"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintTop_toBottomOf="@+id/tvNamePhone"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/viewPager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rbPhone" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout"
+                app:layout_constraintBottom_toTopOf="@id/tvTitleSelectColor"/>
+
+            <TextView
+                android:id="@+id/tvTitleSelectColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Select color and capacity"
+                app:layout_constraintTop_toBottomOf="@id/viewPager"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/markpro_medium"
+                android:textSize="16sp"
+                android:textColor="@color/cyan_dark"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_color"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleSelectColor"
+                app:layout_constraintStart_toEndOf="@id/guideLine_1"
+                android:layout_marginTop="15dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSelectMemory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_button_select_memory"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleSelectColor"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="Add to Cart $1,500.00"
+                app:layout_constraintTop_toBottomOf="@id/rvSelectColor"
+                app:layout_constraintStart_toEndOf="@id/guideLine_1"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="30dp"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:focusable="true"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -77,4 +77,16 @@
         <item name="cornerSizeBottomLeft">0dp</item>
     </style>
 
+    <style name="CustomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+        <item name="minWidth">14dp</item>
+        <item name="maxWidth">14dp</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
+    <style name="CustomRatingBarDetailMovie" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar_dm</item>
+    </style>
+
 </resources>
