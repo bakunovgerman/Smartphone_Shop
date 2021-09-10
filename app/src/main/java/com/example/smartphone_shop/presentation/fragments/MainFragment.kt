@@ -1,5 +1,6 @@
 package com.example.smartphone_shop.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.example.smartphone_shop.presentation.adapter.CategoryAdapter
 import com.example.smartphone_shop.presentation.adapter.HomeStoreAdapter
 import com.example.smartphone_shop.presentation.adapter.items_decoration.GridSpacingItemDecoration
 import com.example.smartphone_shop.presentation.adapter.items_decoration.SpacesItemDecoration
+import com.example.smartphone_shop.presentation.helpers.MainFragmentClickListener
 import com.example.smartphone_shop.repository.data.CategoryDto
 
 class MainFragment : Fragment() {
@@ -29,6 +31,8 @@ class MainFragment : Fragment() {
     private val adapterCategory = CategoryAdapter()
     private lateinit var adapterHomeStore: HomeStoreAdapter
     private lateinit var adapterBestSeller: BestSellerAdapter
+
+    private var mainFragmentClickListener: MainFragmentClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,7 +63,7 @@ class MainFragment : Fragment() {
         rvCategory.adapter = adapterCategory
         adapterHomeStore = HomeStoreAdapter()
         adapterBestSeller = BestSellerAdapter {
-
+            mainFragmentClickListener?.onOpenDetailPhoneClick()
         }
         homeStoreViewPager2.adapter = adapterHomeStore
         rvPhones.apply {
@@ -96,6 +100,17 @@ class MainFragment : Fragment() {
         mainViewModel.categoryList.observe(viewLifecycleOwner, Observer(::initCategoryData))
         mainViewModel.homeStore.observe(viewLifecycleOwner, Observer(adapterHomeStore::initData))
         mainViewModel.bestSeller.observe(viewLifecycleOwner, Observer(adapterBestSeller::initData))
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is MainFragmentClickListener)
+            mainFragmentClickListener = context
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        mainFragmentClickListener = null
     }
 
     companion object {

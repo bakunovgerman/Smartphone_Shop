@@ -1,6 +1,5 @@
 package com.example.smartphone_shop.repository.retrofit.entities
 
-
 import com.google.gson.annotations.SerializedName
 
 data class DetailInfoResponseItem(
@@ -13,7 +12,7 @@ data class DetailInfoResponseItem(
     @SerializedName("color")
     val color: List<String>,
     @SerializedName("_id")
-    val id: String,
+    val _id: String,
     @SerializedName("images")
     val images: List<String>,
     @SerializedName("is_favorites")

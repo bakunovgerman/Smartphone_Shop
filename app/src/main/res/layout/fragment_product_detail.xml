@@ -71,7 +71,7 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp2PhonePhotos"
             android:layout_width="match_parent"
-            android:layout_height="335dp"
+            android:layout_height="400dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnBack"

@@ -34,7 +34,7 @@ class DetailViewModel: ViewModel() {
             withContext(Dispatchers.IO) {
                 val detailInfoResponse = detailInfoRepository.getDetailInfo(apiKey)
                 if (detailInfoResponse.isSuccessful) {
-                    val detailInfoResponseItem = detailInfoResponse.body()
+                    val detailInfoResponseItem = detailInfoResponse.body()?.get(0)
                     _detailInfo.postValue(detailInfoResponseItem)
                 }
             }

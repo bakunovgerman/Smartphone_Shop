@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="300dp"
+    app:behavior_peekHeight="270dp"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <androidx.core.widget.NestedScrollView
@@ -80,13 +80,14 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 app:layout_constraintBottom_toTopOf="@+id/vp2DetailPhone"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rbPhone" />
+                app:layout_constraintEnd_toEndOf="@id/guideLine_2"
+                app:layout_constraintStart_toStartOf="@id/guideLine_1"
+                app:layout_constraintTop_toBottomOf="@id/rbPhone"
+                app:tabTextAppearance="@style/tab_text"/>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp2DetailPhone"

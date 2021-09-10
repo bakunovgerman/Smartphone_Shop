@@ -89,4 +89,9 @@
         <item name="android:progressDrawable">@drawable/custom_ratingbar_dm</item>
     </style>
 
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/markpro_bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

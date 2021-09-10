@@ -53,9 +53,18 @@ class ProductDetailFragment : Fragment() {
 
         initView(view)
         initRvAndVp()
+        initTabLayout()
         initSubscribe()
 
         detailViewModel.getDetailInfo(getString(R.string.api_key))
+    }
+
+    private fun initTabLayout() {
+        tabLayout.apply {
+            addTab(this.newTab().setText("Shop"))
+            addTab(this.newTab().setText("Details"))
+            addTab(this.newTab().setText("Features"))
+        }
     }
 
     private fun initRvAndVp() {
