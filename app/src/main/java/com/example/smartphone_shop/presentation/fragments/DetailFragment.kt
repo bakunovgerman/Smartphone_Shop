@@ -14,11 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.smartphone_shop.R
 import com.example.smartphone_shop.domain.DetailViewModel
+import com.example.smartphone_shop.presentation.adapter.DetailViewPagerAdapter
+import com.example.smartphone_shop.presentation.adapter.MemoryRadioBtnAdapter
 import com.example.smartphone_shop.presentation.adapter.PhoneImagesAdapter
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponseItem
 import com.google.android.material.tabs.TabLayout
 
-class ProductDetailFragment : Fragment() {
+class DetailFragment : Fragment() {
 
     private lateinit var backButton: Button
     private lateinit var cartButton: Button
@@ -33,6 +35,8 @@ class ProductDetailFragment : Fragment() {
     private lateinit var addCartButton: Button
     private lateinit var detailViewModel: DetailViewModel
     private val phoneImagesAdapter = PhoneImagesAdapter()
+    private lateinit var detailViewPagerAdapter: DetailViewPagerAdapter
+    private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,7 @@ class ProductDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView(view)
+        initListener()
         initRvAndVp()
         initTabLayout()
         initSubscribe()
@@ -69,6 +74,10 @@ class ProductDetailFragment : Fragment() {
 
     private fun initRvAndVp() {
         phonePhotosViewPager2.adapter = phoneImagesAdapter
+        memoryRadioBtnAdapter = MemoryRadioBtnAdapter {
+
+        }
+        rvMemory.adapter = memoryRadioBtnAdapter
     }
 
     private fun initSubscribe() {
@@ -79,6 +88,9 @@ class ProductDetailFragment : Fragment() {
         phoneImagesAdapter.initData(detailInfoResponseItem.images)
         namePhoneTextView.text = detailInfoResponseItem.title
         phoneRatingBar.rating = detailInfoResponseItem.rating.toFloat()
+        viewPager.adapter = DetailViewPagerAdapter(parentFragmentManager, lifecycle, detailInfoResponseItem)
+        memoryRadioBtnAdapter.initData(detailInfoResponseItem.capacity)
+        addCartButton.text = String.format(getString(R.string.phone_price_cart), detailInfoResponseItem.price)
     }
 
     private fun initView(view: View) {
@@ -95,8 +107,35 @@ class ProductDetailFragment : Fragment() {
         addCartButton = view.findViewById(R.id.btnAddCart)
     }
 
+    private fun initListener() {
+        // слушатель на клики по табу
+        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+                tab?.let {
+                    viewPager.currentItem = it.position
+                }
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+            }
+
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+            }
+
+        })
+        // слушатель на свайп по viewPager и сет коррктного таба исходя из видимого фрагмента
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                super.onPageSelected(position)
+                tabLayout.apply {
+                    selectTab(this.getTabAt(position))
+                }
+            }
+        })
+    }
+
     companion object {
         @JvmStatic
-        fun newInstance() = ProductDetailFragment()
+        fun newInstance() = DetailFragment()
     }
 }

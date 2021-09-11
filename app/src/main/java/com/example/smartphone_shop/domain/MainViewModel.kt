@@ -6,6 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.smartphone_shop.App
+import com.example.smartphone_shop.presentation.helpers.ViewStateScreen
 import com.example.smartphone_shop.repository.data.CategoryDataSource
 import com.example.smartphone_shop.repository.data.CategoryDataSourceImpl
 import com.example.smartphone_shop.repository.data.CategoryDto
@@ -22,7 +23,7 @@ class MainViewModel: ViewModel() {
 
     // init CoroutineExceptionHandler
     private val errorHandler = CoroutineExceptionHandler { _, error ->
-        Log.d("mainInfoResponse", error.toString())
+        _viewState.postValue(ViewStateScreen(e = error))
     }
 
     // init LiveData
@@ -34,6 +35,8 @@ class MainViewModel: ViewModel() {
     private val _homeStore = MutableLiveData<List<HomeStore>>()
     val bestSeller: LiveData<List<BestSeller>> get() = _bestSeller
     private val _bestSeller = MutableLiveData<List<BestSeller>>()
+    val viewState: LiveData<ViewStateScreen> get() = _viewState
+    private val _viewState = MutableLiveData<ViewStateScreen>()
     // repositories
     private val categoryDataSourceImpl: CategoryDataSource = CategoryDataSourceImpl()
     private val mainInfoRepositoryImpl: MainInfoRepository = MainInfoRepositoryImpl(App.instance.apiService)
@@ -52,6 +55,7 @@ class MainViewModel: ViewModel() {
                     val bestSellerList = mainInfoResponse.body()?.get(0)?.bestSeller ?: emptyList()
                     _homeStore.postValue(homeStoreList)
                     _bestSeller.postValue(bestSellerList)
+                    _viewState.postValue(ViewStateScreen(true))
                 }
             }
         }

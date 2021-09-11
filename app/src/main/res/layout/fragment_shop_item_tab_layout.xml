@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:appcompat="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.ShopItemTabLayoutFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/guide_line_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/guide_line_margin" />
+
+    <LinearLayout
+        android:id="@+id/llCpu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideLine_1"
+        app:layout_constraintEnd_toStartOf="@+id/llCamera"
+        app:layout_constraintHorizontal_chainStyle="spread_inside">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_cpu"/>
+
+        <TextView
+            android:id="@+id/tvCpu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Exynos 990"
+            android:fontFamily="@font/markpro_regular"
+            android:textColor="@color/gray"
+            android:textSize="11sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llCpu"
+        app:layout_constraintEnd_toStartOf="@id/llRam">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_camera"/>
+
+        <TextView
+            android:id="@+id/tvCamera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Exynos 990"
+            android:fontFamily="@font/markpro_regular"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llRam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llCamera"
+        app:layout_constraintEnd_toStartOf="@id/llSd">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/ram"
+            android:src="@drawable/ic_ram" />
+
+        <TextView
+            android:id="@+id/tvRam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Exynos 990"
+            android:fontFamily="@font/markpro_regular"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llSd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llRam"
+        app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_sd"/>
+
+        <TextView
+            android:id="@+id/tvSd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Exynos 990"
+            android:fontFamily="@font/markpro_regular"
+            android:textColor="@color/gray"
+            android:textSize="11sp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

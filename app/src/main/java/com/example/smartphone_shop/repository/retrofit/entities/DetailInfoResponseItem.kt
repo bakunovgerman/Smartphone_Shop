@@ -1,7 +1,11 @@
 package com.example.smartphone_shop.repository.retrofit.entities
 
+import android.os.Parcel
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class DetailInfoResponseItem(
     @SerializedName("CPU")
     val cPU: String,
@@ -27,4 +31,4 @@ data class DetailInfoResponseItem(
     val ssd: String,
     @SerializedName("title")
     val title: String
-)
+) : Parcelable
