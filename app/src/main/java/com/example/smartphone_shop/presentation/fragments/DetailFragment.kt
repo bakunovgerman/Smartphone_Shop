@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.smartphone_shop.R
 import com.example.smartphone_shop.domain.DetailViewModel
+import com.example.smartphone_shop.presentation.adapter.ColorAdapter
 import com.example.smartphone_shop.presentation.adapter.DetailViewPagerAdapter
 import com.example.smartphone_shop.presentation.adapter.MemoryRadioBtnAdapter
 import com.example.smartphone_shop.presentation.adapter.PhoneImagesAdapter
@@ -37,6 +38,7 @@ class DetailFragment : Fragment() {
     private val phoneImagesAdapter = PhoneImagesAdapter()
     private lateinit var detailViewPagerAdapter: DetailViewPagerAdapter
     private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
+    private lateinit var colorAdapter: ColorAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,6 +80,10 @@ class DetailFragment : Fragment() {
 
         }
         rvMemory.adapter = memoryRadioBtnAdapter
+        colorAdapter = ColorAdapter {
+
+        }
+        rvColor.adapter = colorAdapter
     }
 
     private fun initSubscribe() {
@@ -91,6 +97,7 @@ class DetailFragment : Fragment() {
         viewPager.adapter = DetailViewPagerAdapter(parentFragmentManager, lifecycle, detailInfoResponseItem)
         memoryRadioBtnAdapter.initData(detailInfoResponseItem.capacity)
         addCartButton.text = String.format(getString(R.string.phone_price_cart), detailInfoResponseItem.price)
+        colorAdapter.initData(detailInfoResponseItem.color)
     }
 
     private fun initView(view: View) {

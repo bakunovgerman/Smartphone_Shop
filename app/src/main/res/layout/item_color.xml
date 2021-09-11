@@ -8,14 +8,23 @@
         android:id="@+id/btnColor"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:src="@drawable/ic_selected"
         app:cb_color="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <ImageView
+        android:id="@+id/iconSelectedImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/viewBlackSelected"
         android:layout_width="33dp"
         android:layout_height="32dp"
