@@ -51,7 +51,7 @@ class ColorAdapter(
         }
 
         fun bind(color: String, position: Int) {
-            colorCircleButton.setColor(android.graphics.Color.parseColor(color))ю
+            colorCircleButton.setColor(android.graphics.Color.parseColor(color))
             if (selectedItem == position){
                 viewDark.visibility = View.VISIBLE
                 iconSelect.visibility = View.VISIBLE
