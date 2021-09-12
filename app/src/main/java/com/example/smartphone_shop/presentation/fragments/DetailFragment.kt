@@ -93,9 +93,7 @@ class DetailFragment : Fragment() {
 
         }
         rvMemory.adapter = memoryRadioBtnAdapter
-        colorAdapter = ColorAdapter {
-
-        }
+        colorAdapter = ColorAdapter()
         rvColor.adapter = colorAdapter
     }
 

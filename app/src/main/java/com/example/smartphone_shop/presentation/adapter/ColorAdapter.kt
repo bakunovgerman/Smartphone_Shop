@@ -28,15 +28,12 @@ import androidx.compose.ui.graphics.Color
 import at.markushi.ui.CircleButton
 
 
-class ColorAdapter(
-    private val onMemoryRadioBtnItemClick: (String) -> Unit
-) :
-    RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
+class ColorAdapter : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
 
     private var selectedItem: Int = 0
     private val list: MutableList<String> = ArrayList()
 
-    inner class ColorViewHolder(view: View, onMemoryRadioBtnItemClick: (String) -> Unit) :
+    inner class ColorViewHolder(view: View) :
         RecyclerView.ViewHolder(view) {
 
         private val colorCircleButton: CircleButton = itemView.findViewById(R.id.btnColor)
@@ -52,11 +49,10 @@ class ColorAdapter(
 
         fun bind(color: String, position: Int) {
             colorCircleButton.setColor(android.graphics.Color.parseColor(color))
-            if (selectedItem == position){
+            if (selectedItem == position) {
                 viewDark.visibility = View.VISIBLE
                 iconSelect.visibility = View.VISIBLE
-            }
-            else {
+            } else {
                 viewDark.visibility = View.INVISIBLE
                 iconSelect.visibility = View.INVISIBLE
             }
@@ -72,8 +68,7 @@ class ColorAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ColorViewHolder {
         val inflater = LayoutInflater.from(parent.context)
         return ColorViewHolder(
-            inflater.inflate(R.layout.item_color, parent, false),
-            onMemoryRadioBtnItemClick
+            inflater.inflate(R.layout.item_color, parent, false)
         )
     }
 
