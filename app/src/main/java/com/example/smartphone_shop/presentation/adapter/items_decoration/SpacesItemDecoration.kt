@@ -25,11 +25,11 @@ class SpacesItemDecoration(
                 outRect.right = dpToPx(spaceRight)
             }
             size - 1 -> outRect.right = dpToPx(spaceLeft)
-            else -> outRect.right = dpToPx(spaceRight)
+            else -> {
+                outRect.bottom = spaceBottom
+                outRect.right = dpToPx(spaceRight)
+            }
         }
-
-        outRect.bottom = spaceBottom
-
     }
     private fun dpToPx(dp: Int): Int {
         return (dp * Resources.getSystem().displayMetrics.density).toInt()

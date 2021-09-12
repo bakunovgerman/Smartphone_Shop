@@ -32,6 +32,8 @@ import com.google.android.material.tabs.TabLayout
 class DetailFragment : Fragment() {
 
     private lateinit var mainFragmentRootLayout: CoordinatorLayout
+    private lateinit var progressBarLayout: FrameLayout
+    private lateinit var detailBottomSheetBehavior: CardView
     private lateinit var backButton: Button
     private lateinit var cartButton: Button
     private lateinit var phonePhotosViewPager2: ViewPager2
@@ -49,8 +51,6 @@ class DetailFragment : Fragment() {
     private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
     private lateinit var colorAdapter: ColorAdapter
     private var mainFragmentClickListener: MainFragmentClickListener? = null
-    private lateinit var progressBarLayout: FrameLayout
-    private lateinit var detailBottomSheetBehavior: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

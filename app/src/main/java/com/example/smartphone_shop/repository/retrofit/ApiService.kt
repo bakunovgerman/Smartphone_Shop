@@ -1,5 +1,6 @@
 package com.example.smartphone_shop.repository.retrofit
 
+import com.example.smartphone_shop.repository.retrofit.entities.CartResponse
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponse
 import com.example.smartphone_shop.repository.retrofit.entities.MainInfoResponse
 import com.example.smartphone_shop.repository.retrofit.utils.RetrofitExtensions.Companion.setClient
@@ -17,6 +18,9 @@ interface ApiService {
 
     @GET("productdetails")
     suspend fun getDetailInfo(@Header("x-apikey") apiKey: String): Response<DetailInfoResponse>
+
+    @GET("mycart")
+    suspend fun getCart(@Header("x-apikey") apiKey: String): Response<CartResponse>
 
     companion object {
         private const val BASE_URL = "https://db2021ecom-edca.restdb.io/rest/"
