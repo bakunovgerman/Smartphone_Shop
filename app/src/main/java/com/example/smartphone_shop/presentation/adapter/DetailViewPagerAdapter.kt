@@ -4,9 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.smartphone_shop.presentation.fragments.DetailItemTabLayoutFragment
-import com.example.smartphone_shop.presentation.fragments.FeaturesItemTabLayoutFragment
-import com.example.smartphone_shop.presentation.fragments.ShopItemTabLayoutFragment
+import com.example.smartphone_shop.presentation.fragments.tab_layout.DetailItemTabLayoutFragment
+import com.example.smartphone_shop.presentation.fragments.tab_layout.FeaturesItemTabLayoutFragment
+import com.example.smartphone_shop.presentation.fragments.tab_layout.ShopItemTabLayoutFragment
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponseItem
 
 class DetailViewPagerAdapter(

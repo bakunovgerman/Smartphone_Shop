@@ -12,7 +12,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import androidx.viewpager2.widget.ViewPager2
 import com.example.smartphone_shop.R
 import com.example.smartphone_shop.domain.MainViewModel
@@ -69,7 +68,7 @@ class MainFragment : Fragment() {
         rvCategory.adapter = adapterCategory
         adapterHomeStore = HomeStoreAdapter()
         adapterBestSeller = BestSellerAdapter {
-            mainFragmentClickListener?.onOpenDetailPhoneClick()
+            mainFragmentClickListener?.onOpenDetailPhoneFragmentClick()
         }
         homeStoreViewPager2.adapter = adapterHomeStore
         rvPhones.apply {

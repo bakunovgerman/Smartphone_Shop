@@ -82,6 +82,7 @@ class BestSellerAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun initData(list: List<BestSeller>) {
+        this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
     }

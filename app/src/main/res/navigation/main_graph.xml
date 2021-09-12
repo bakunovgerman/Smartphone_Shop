@@ -19,10 +19,21 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.smartphone_shop.presentation.fragments.DetailFragment"
-        tools:layout="@layout/fragment_product_detail">
+        tools:layout="@layout/fragment_detail">
 
         <action
             android:id="@+id/action_detail_fragment_to_main_fragment"
+            app:destination="@+id/mainFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.smartphone_shop.presentation.fragments.CartFragment"
+        tools:layout="@layout/fragment_cart">
+
+        <action
+            android:id="@+id/action_cart_fragment_to_main_fragment"
             app:destination="@+id/mainFragment" />
 
     </fragment>

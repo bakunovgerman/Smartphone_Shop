@@ -27,6 +27,7 @@ class CategoryAdapter: RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>(
 
     @SuppressLint("NotifyDataSetChanged")
     fun initData(list: List<CategoryDto>) {
+        this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
     }

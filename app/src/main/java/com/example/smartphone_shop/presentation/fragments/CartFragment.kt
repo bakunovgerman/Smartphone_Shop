@@ -7,11 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smartphone_shop.R
 
-class FeaturesItemTabLayoutFragment : Fragment() {
+class CartFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -19,11 +18,11 @@ class FeaturesItemTabLayoutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_features_item_tab_layout, container, false)
+        return inflater.inflate(R.layout.fragment_cart, container, false)
     }
 
     companion object {
         @JvmStatic
-        fun newInstance() = FeaturesItemTabLayoutFragment()
+        fun newInstance() = CartFragment()
     }
 }

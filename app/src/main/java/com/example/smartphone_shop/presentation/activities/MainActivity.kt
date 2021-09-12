@@ -23,8 +23,23 @@ class MainActivity : AppCompatActivity(), MainFragmentClickListener {
         bottomNavigationView.setupWithNavController(navController)
     }
 
-    override fun onOpenDetailPhoneClick() {
+    override fun onBackPressed() {
+        if (navController.currentDestination?.id == R.id.detailFragment)
+            navController.popBackStack()
+        else
+            super.onBackPressed()
+    }
+
+    override fun onOpenDetailPhoneFragmentClick() {
         navController.navigate(R.id.detailFragment)
+    }
+
+    override fun onOpenMainFragmentClick() {
+        navController.navigate(R.id.mainFragment)
+    }
+
+    override fun onOpenCartFragmentClick() {
+        navController.navigate(R.id.cartFragment)
     }
 
 }

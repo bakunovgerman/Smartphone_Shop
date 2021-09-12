@@ -1,4 +1,4 @@
-package com.example.smartphone_shop.presentation.fragments
+package com.example.smartphone_shop.presentation.fragments.tab_layout
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

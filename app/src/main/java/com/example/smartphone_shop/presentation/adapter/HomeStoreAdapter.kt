@@ -56,6 +56,7 @@ class HomeStoreAdapter :
 
     @SuppressLint("NotifyDataSetChanged")
     fun initData(list: List<HomeStore>) {
+        this.list.clear()
         this.list.addAll(list)
         notifyDataSetChanged()
     }

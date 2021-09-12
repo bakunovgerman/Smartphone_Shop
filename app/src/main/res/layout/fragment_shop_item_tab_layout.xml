@@ -5,7 +5,7 @@
     android:layout_height="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:appcompat="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.fragments.ShopItemTabLayoutFragment">
+    tools:context=".presentation.fragments.tab_layout.ShopItemTabLayoutFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLine_1"

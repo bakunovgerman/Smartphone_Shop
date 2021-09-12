@@ -1,5 +1,6 @@
 package com.example.smartphone_shop.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.example.smartphone_shop.presentation.adapter.ColorAdapter
 import com.example.smartphone_shop.presentation.adapter.DetailViewPagerAdapter
 import com.example.smartphone_shop.presentation.adapter.MemoryRadioBtnAdapter
 import com.example.smartphone_shop.presentation.adapter.PhoneImagesAdapter
+import com.example.smartphone_shop.presentation.helpers.MainFragmentClickListener
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponseItem
 import com.google.android.material.tabs.TabLayout
 
@@ -39,6 +41,7 @@ class DetailFragment : Fragment() {
     private lateinit var detailViewPagerAdapter: DetailViewPagerAdapter
     private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
     private lateinit var colorAdapter: ColorAdapter
+    private var mainFragmentClickListener: MainFragmentClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +54,7 @@ class DetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_detail, container, false)
+        return inflater.inflate(R.layout.fragment_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -130,7 +133,7 @@ class DetailFragment : Fragment() {
             }
 
         })
-        // слушатель на свайп по viewPager и сет коррктного таба исходя из видимого фрагмента
+        // слушатель на свайп по viewPager и сет корректного таба исходя из видимого фрагмента
         viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
@@ -139,6 +142,21 @@ class DetailFragment : Fragment() {
                 }
             }
         })
+        // кнопка назад
+        backButton.setOnClickListener {
+            mainFragmentClickListener?.onOpenMainFragmentClick()
+        }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is MainFragmentClickListener)
+            mainFragmentClickListener = context
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        mainFragmentClickListener = null
     }
 
     companion object {
