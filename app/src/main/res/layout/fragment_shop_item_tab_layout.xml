@@ -42,8 +42,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Exynos 990"
-            android:fontFamily="@font/markpro_regular"
-            android:textColor="@color/gray"
+            android:fontFamily="@font/mark_pro_regular"
+            android:textColor="@color/gray_200"
             android:textSize="11sp"/>
 
     </LinearLayout>
@@ -68,8 +68,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Exynos 990"
-            android:fontFamily="@font/markpro_regular"
-            android:textColor="@color/gray"
+            android:fontFamily="@font/mark_pro_regular"
+            android:textColor="@color/gray_200"
             android:textSize="11sp"
             android:layout_marginTop="5dp"/>
 
@@ -97,8 +97,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Exynos 990"
-            android:fontFamily="@font/markpro_regular"
-            android:textColor="@color/gray"
+            android:fontFamily="@font/mark_pro_regular"
+            android:textColor="@color/gray_200"
             android:textSize="11sp"
             android:layout_marginTop="5dp"/>
 
@@ -125,8 +125,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="Exynos 990"
-            android:fontFamily="@font/markpro_regular"
-            android:textColor="@color/gray"
+            android:fontFamily="@font/mark_pro_regular"
+            android:textColor="@color/gray_200"
             android:textSize="11sp"
             android:layout_marginTop="5dp"/>
 

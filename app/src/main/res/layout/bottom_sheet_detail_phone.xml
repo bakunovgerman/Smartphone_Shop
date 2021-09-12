@@ -43,7 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:fontFamily="@font/markpro_bold"
+                android:fontFamily="@font/mark_pro_bold"
                 android:textColor="@color/cyan_dark"
                 android:textSize="25sp"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
@@ -107,7 +107,7 @@
                 app:layout_constraintTop_toBottomOf="@id/vp2DetailPhone"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
                 android:layout_marginTop="30dp"
-                android:fontFamily="@font/markpro_medium"
+                android:fontFamily="@font/mark_pro_medium"
                 android:textSize="16sp"
                 android:textColor="@color/cyan_dark"/>
 
@@ -146,7 +146,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
-                android:fontFamily="@font/markpro_bold"
+                android:fontFamily="@font/mark_pro_bold"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:focusable="true"/>

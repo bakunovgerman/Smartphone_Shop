@@ -94,13 +94,16 @@ class MainFragment : Fragment() {
 
     private fun initCategoryData(listCategory: List<CategoryDto>) {
         adapterCategory.initData(listCategory)
-        rvCategory.addItemDecoration(
-            SpacesItemDecoration(
-                spaceRight = 25,
-                spaceLeft = 15,
-                size = listCategory.size
+        if (rvCategory.itemDecorationCount == 0){
+            rvCategory.addItemDecoration(
+                SpacesItemDecoration(
+                    spaceRight = 25,
+                    spaceLeft = 15,
+                    size = listCategory.size
+                )
             )
-        )
+        }
+
     }
 
     private fun setViewState(viewStateScreen: ViewStateScreen) = with(viewStateScreen) {

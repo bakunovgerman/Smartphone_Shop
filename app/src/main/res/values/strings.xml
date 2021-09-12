@@ -26,4 +26,9 @@
     <string name="no_data">Нет данных</string>
     <string name="ram">ram</string>
     <string name="exception">Произошла ошибка!</string>
+    <string name="add_address">Add address</string>
+    <string name="my_cart">My Cart</string>
+    <string name="total">Total</string>
+    <string name="delivery">Delivery</string>
+    <string name="checkout">Checkout</string>
 </resources>

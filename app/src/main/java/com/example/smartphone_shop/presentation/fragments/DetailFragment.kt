@@ -146,6 +146,10 @@ class DetailFragment : Fragment() {
         backButton.setOnClickListener {
             mainFragmentClickListener?.onOpenMainFragmentClick()
         }
+        // кнопка корзина
+        cartButton.setOnClickListener {
+            mainFragmentClickListener?.onOpenCartFragmentClick()
+        }
     }
 
     override fun onAttach(context: Context) {

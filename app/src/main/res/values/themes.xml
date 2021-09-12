@@ -18,7 +18,7 @@
         <item name="backgroundTint">@color/bgColorScreen</item>
         <item name="android:textColor">@color/cyan_dark</item>
         <item name="textAllCaps">false</item>
-        <item name="android:fontFamily">@font/markpro_medium</item>
+        <item name="android:fontFamily">@font/mark_pro_medium</item>
         <item name="android:textSize">15sp</item>
         <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
         <item name="icon">@drawable/ic_gps</item>
@@ -52,12 +52,12 @@
         <item name="android:textColor">@color/orange</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textAllCaps">false</item>
-        <item name="fontFamily">@font/markpro_regular</item>
+        <item name="fontFamily">@font/mark_pro_regular</item>
     </style>
 
     <style name="TitleTextView">
         <item name="android:textColor">@color/cyan_dark</item>
-        <item name="fontFamily">@font/markpro_bold</item>
+        <item name="fontFamily">@font/mark_pro_bold</item>
         <item name="android:textSize">25sp</item>
     </style>
 
@@ -90,7 +90,7 @@
     </style>
 
     <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
-        <item name="android:fontFamily">@font/markpro_bold</item>
+        <item name="android:fontFamily">@font/mark_pro_bold</item>
         <item name="android:textSize">20sp</item>
     </style>
 

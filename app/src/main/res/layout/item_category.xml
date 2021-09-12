@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         tools:text="Phones"
         android:textColor="@color/cyan_dark"
-        android:fontFamily="@font/markpro_medium"
+        android:fontFamily="@font/mark_pro_medium"
         android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>
