@@ -11,7 +11,6 @@ import android.widget.FrameLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -113,7 +112,7 @@ class DetailFragment : Fragment() {
             DetailViewPagerAdapter(parentFragmentManager, lifecycle, detailInfoResponseItem)
         memoryRadioBtnAdapter.initData(detailInfoResponseItem.capacity)
         addCartButton.text =
-            String.format(getString(R.string.phone_price_cart), detailInfoResponseItem.price)
+            String.format(getString(R.string.phone_price_add_cart_button), detailInfoResponseItem.price)
         colorAdapter.initData(detailInfoResponseItem.color)
     }
 

@@ -35,7 +35,7 @@ class CartFragment : Fragment() {
     private lateinit var rvItemsCart: RecyclerView
     private lateinit var totalPriceTextView: TextView
     private lateinit var deliveryTextView: TextView
-    private val cartAdapter = CartAdapter()
+    private lateinit var cartAdapter: CartAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,10 +56,17 @@ class CartFragment : Fragment() {
     }
 
     private fun initRv() {
+        cartAdapter = CartAdapter {
+            changeTotalPrice(it)
+        }
         rvItemsCart.apply {
             adapter = cartAdapter
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }
+    }
+
+    private fun changeTotalPrice(price: Int) {
+        totalPriceTextView.text = String.format(getString(R.string.total_price_cart), price.toDouble())
     }
 
     private fun initSubscribe() {
@@ -69,7 +76,8 @@ class CartFragment : Fragment() {
 
     private fun setCartData(cartResponseItem: CartResponseItem) = with(cartResponseItem) {
         initDataRv(this.basket)
-        totalPriceTextView.text = this.total.toString()
+        totalPriceTextView.text =  String.format(getString(R.string.total_price_cart),
+            this.total.toString())
         deliveryTextView.text = this.delivery
     }
 

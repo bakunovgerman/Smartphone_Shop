@@ -21,7 +21,9 @@
     <string name="api_key">2aa8e910f6c4ade81a84c9333ffc7bf6a398e</string>
     <string name="shadow">Тень</string>
     <string name="phone_price">%s$</string>
-    <string name="phone_price_cart">Add to Cart $%s</string>
+    <string name="phone_price_add_cart_button">Add to Cart $%s</string>
+    <string name="price_item_cart">$%s</string>
+    <string name="total_price_cart">$%s us</string>
     <string name="product_details">Product Details</string>
     <string name="no_data">Нет данных</string>
     <string name="ram">ram</string>
