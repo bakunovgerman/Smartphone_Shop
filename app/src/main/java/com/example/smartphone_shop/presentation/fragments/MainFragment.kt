@@ -58,6 +58,8 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView(view)
+        // показываем прогрес бар
+        showProgressBar()
         initRv()
         initSubscribe()
         loadData()

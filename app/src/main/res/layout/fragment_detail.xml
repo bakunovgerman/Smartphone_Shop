@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/fragmentDetailMovieRootView"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/mainFragmentRootLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:background="@color/bgColorScreen"
@@ -82,5 +83,9 @@
 
     <include layout="@layout/bottom_sheet_detail_phone"
         android:id="@+id/bottom_sheet_detail_phone"/>
+
+    <include layout="@layout/loading_layout"
+        android:id="@+id/progressBarLayout"
+        android:visibility="invisible"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
