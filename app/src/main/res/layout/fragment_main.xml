@@ -34,21 +34,31 @@
             <Button
                 android:id="@+id/btnLocation"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:text="Zihuatanejo, Gro"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 style="@style/btn_location" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
-                android:padding="15dp"
-                app:layout_constraintBaseline_toBaselineOf="@id/btnLocation"
+            <ImageButton
+                android:id="@+id/btnFiltersShow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_btn_show_filters"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
                 android:src="@drawable/ic_filters"
-                android:contentDescription="@string/filters" />
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconTint="@color/cyan_dark"
+                app:layout_constraintBaseline_toBaselineOf="@id/btnLocation"
+                app:layout_constraintEnd_toStartOf="@id/guideLine_2"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:focusable="true" />
 
             <TextView
                 android:id="@+id/tvSelectViewTitle"

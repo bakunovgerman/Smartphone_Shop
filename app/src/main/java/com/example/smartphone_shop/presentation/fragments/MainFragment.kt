@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -20,9 +20,10 @@ import com.example.smartphone_shop.presentation.adapter.CategoryAdapter
 import com.example.smartphone_shop.presentation.adapter.HomeStoreAdapter
 import com.example.smartphone_shop.presentation.adapter.items_decoration.GridSpacingItemDecoration
 import com.example.smartphone_shop.presentation.adapter.items_decoration.SpacesItemDecoration
-import com.example.smartphone_shop.presentation.helpers.MainFragmentClickListener
+import com.example.smartphone_shop.presentation.helpers.FragmentClickListener
 import com.example.smartphone_shop.presentation.helpers.ViewStateScreen
 import com.example.smartphone_shop.repository.data.CategoryDto
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 
 class MainFragment : Fragment() {
@@ -36,8 +37,16 @@ class MainFragment : Fragment() {
     private lateinit var adapterHomeStore: HomeStoreAdapter
     private lateinit var adapterBestSeller: BestSellerAdapter
     private lateinit var progressBarLayout: FrameLayout
+    private lateinit var filtersBottomSheetDialog: BottomSheetDialog
+    private lateinit var filtersBottomSheetView: View
+    private lateinit var brandAutoCompleteTextView: AutoCompleteTextView
+    private lateinit var sizeAutoCompleteTextView: AutoCompleteTextView
+    private lateinit var priceAutoCompleteTextView: AutoCompleteTextView
+    private lateinit var filtersButton: ImageButton
+    private lateinit var closeFilterButton: Button
+    private lateinit var doneFilterButton: Button
 
-    private var mainFragmentClickListener: MainFragmentClickListener? = null
+    private var fragmentClickListener: FragmentClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +67,8 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initView(view)
+        initBottomSheetDialog(view)
+        initListener()
         // показываем прогрес бар
         showProgressBar()
         initRv()
@@ -66,11 +77,46 @@ class MainFragment : Fragment() {
 
     }
 
+    private fun initListener() {
+        filtersButton.setOnClickListener {
+            filtersBottomSheetDialog.show()
+        }
+        closeFilterButton.setOnClickListener {
+            filtersBottomSheetDialog.dismiss()
+        }
+        doneFilterButton.setOnClickListener {
+            filtersBottomSheetDialog.dismiss()
+        }
+    }
+
+    private fun initBottomSheetDialog(view: View) {
+        filtersBottomSheetDialog = BottomSheetDialog(view.context, R.style.BottomSheetDialogTheme)
+        filtersBottomSheetView = LayoutInflater.from(context).inflate(
+            R.layout.filters_bottom_sheet_dialog_layout,
+            view.findViewById(R.id.filtersRootLayout)
+        )
+        closeFilterButton = filtersBottomSheetView.findViewById(R.id.btnClose)
+        doneFilterButton = filtersBottomSheetView.findViewById(R.id.btnDoneFilters)
+        filtersBottomSheetDialog.setContentView(filtersBottomSheetView)
+        //init view BottomSheetDialog
+        brandAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.brandAutoCompleteTextView)
+        priceAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.priceAutoCompleteTextView)
+        sizeAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.sizeAutoCompleteTextView)
+        // string arrays
+        val brandArray = resources.getStringArray(R.array.brand_list)
+        val priceArray = resources.getStringArray(R.array.price_list)
+        val sizeArray = resources.getStringArray(R.array.size_list)
+        // set adapters
+        brandAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, brandArray))
+        priceAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, priceArray))
+        sizeAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, sizeArray))
+    }
+
     private fun initRv() {
         rvCategory.adapter = adapterCategory
         adapterHomeStore = HomeStoreAdapter()
         adapterBestSeller = BestSellerAdapter {
-            mainFragmentClickListener?.onOpenDetailPhoneFragmentClick()
+            fragmentClickListener?.onOpenDetailFragmentClick()
         }
         homeStoreViewPager2.adapter = adapterHomeStore
         rvPhones.apply {
@@ -92,11 +138,12 @@ class MainFragment : Fragment() {
         rvPhones = view.findViewById(R.id.rvPhones)
         homeStoreViewPager2 = view.findViewById(R.id.vp2HomeStore)
         progressBarLayout = view.findViewById(R.id.progressBarLayout)
+        filtersButton = view.findViewById(R.id.btnFiltersShow)
     }
 
     private fun initCategoryData(listCategory: List<CategoryDto>) {
         adapterCategory.initData(listCategory)
-        if (rvCategory.itemDecorationCount == 0){
+        if (rvCategory.itemDecorationCount == 0) {
             rvCategory.addItemDecoration(
                 SpacesItemDecoration(
                     spaceRight = 25,
@@ -124,7 +171,8 @@ class MainFragment : Fragment() {
     }
 
     private fun showException(e: Throwable) {
-        Snackbar.make(mainFragmentRootLayout, getString(R.string.exception), Snackbar.LENGTH_LONG).show()
+        Snackbar.make(mainFragmentRootLayout, getString(R.string.exception), Snackbar.LENGTH_LONG)
+            .show()
     }
 
     private fun initSubscribe() {
@@ -136,13 +184,13 @@ class MainFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is MainFragmentClickListener)
-            mainFragmentClickListener = context
+        if (context is FragmentClickListener)
+            fragmentClickListener = context
     }
 
     override fun onDetach() {
         super.onDetach()
-        mainFragmentClickListener = null
+        fragmentClickListener = null
     }
 
     companion object {

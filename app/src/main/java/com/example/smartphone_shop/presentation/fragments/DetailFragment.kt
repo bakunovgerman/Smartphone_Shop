@@ -22,7 +22,7 @@ import com.example.smartphone_shop.presentation.adapter.ColorAdapter
 import com.example.smartphone_shop.presentation.adapter.DetailViewPagerAdapter
 import com.example.smartphone_shop.presentation.adapter.MemoryRadioBtnAdapter
 import com.example.smartphone_shop.presentation.adapter.PhoneImagesAdapter
-import com.example.smartphone_shop.presentation.helpers.MainFragmentClickListener
+import com.example.smartphone_shop.presentation.helpers.FragmentClickListener
 import com.example.smartphone_shop.presentation.helpers.ViewStateScreen
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponseItem
 import com.google.android.material.snackbar.Snackbar
@@ -49,7 +49,7 @@ class DetailFragment : Fragment() {
     private lateinit var detailViewPagerAdapter: DetailViewPagerAdapter
     private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
     private lateinit var colorAdapter: ColorAdapter
-    private var mainFragmentClickListener: MainFragmentClickListener? = null
+    private var fragmentClickListener: FragmentClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -160,11 +160,11 @@ class DetailFragment : Fragment() {
         })
         // кнопка назад
         backButton.setOnClickListener {
-            mainFragmentClickListener?.onOpenMainFragmentClick()
+            fragmentClickListener?.onOpenMainFragmentClick()
         }
         // кнопка корзина
         cartButton.setOnClickListener {
-            mainFragmentClickListener?.onOpenCartFragmentClick()
+            fragmentClickListener?.onOpenCartFragmentClick()
         }
     }
 
@@ -192,13 +192,13 @@ class DetailFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is MainFragmentClickListener)
-            mainFragmentClickListener = context
+        if (context is FragmentClickListener)
+            fragmentClickListener = context
     }
 
     override fun onDetach() {
         super.onDetach()
-        mainFragmentClickListener = null
+        fragmentClickListener = null
     }
 
     companion object {

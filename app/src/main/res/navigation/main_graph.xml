@@ -11,8 +11,8 @@
         tools:layout="@layout/fragment_main">
 
         <action
-            android:id="@+id/action_main_fragment_to_detail_fragment"
-            app:destination="@+id/detailFragment" />
+            android:id="@+id/action_main_fragment_to_cart_fragment"
+            app:destination="@+id/cartFragment" />
 
     </fragment>
 
@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_detail_fragment_to_main_fragment"
             app:destination="@+id/mainFragment" />
+
+        <action android:id="@+id/action_detail_fragment_to_cart_fragment"
+            app:destination="@+id/cartFragment"/>
 
     </fragment>
 

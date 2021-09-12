@@ -33,4 +33,28 @@
     <string name="total">Total</string>
     <string name="delivery">Delivery</string>
     <string name="checkout">Checkout</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+
+    <string-array name="brand_list">
+        <item>Samsung</item>
+        <item>Apple</item>
+        <item>Xiaomi</item>
+    </string-array>
+
+    <string-array name="price_list">
+        <item>$0-$300</item>
+        <item>$300-$700</item>
+        <item>$700-$1000</item>
+    </string-array>
+
+    <string-array name="size_list">
+        <item>4.5 to 5.5 inches</item>
+        <item>5.5 to 6.0 inches</item>
+        <item>6.0 to 6.8 inches</item>
+    </string-array>
+
 </resources>

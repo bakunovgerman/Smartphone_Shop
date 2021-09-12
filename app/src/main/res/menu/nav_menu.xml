@@ -8,7 +8,7 @@
         android:title="@string/explorer"/>
 
     <item
-        android:id="@+id/shop"
+        android:id="@+id/cart"
         android:icon="@drawable/ic_shop"
         android:title="@string/shop"/>
 

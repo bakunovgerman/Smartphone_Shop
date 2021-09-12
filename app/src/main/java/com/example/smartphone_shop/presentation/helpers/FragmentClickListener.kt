@@ -1,7 +1,7 @@
 package com.example.smartphone_shop.presentation.helpers
 
-interface MainFragmentClickListener {
-    fun onOpenDetailPhoneFragmentClick()
+interface FragmentClickListener {
+    fun onOpenDetailFragmentClick()
     fun onOpenMainFragmentClick()
     fun onOpenCartFragmentClick()
 }

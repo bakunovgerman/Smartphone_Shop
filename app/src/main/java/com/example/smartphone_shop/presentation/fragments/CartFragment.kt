@@ -1,5 +1,6 @@
 package com.example.smartphone_shop.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -19,6 +20,7 @@ import com.example.smartphone_shop.R
 import com.example.smartphone_shop.domain.CartViewModel
 import com.example.smartphone_shop.presentation.adapter.CartAdapter
 import com.example.smartphone_shop.presentation.adapter.items_decoration.SpacesItemDecoration
+import com.example.smartphone_shop.presentation.helpers.FragmentClickListener
 import com.example.smartphone_shop.presentation.helpers.ViewStateScreen
 import com.example.smartphone_shop.repository.retrofit.entities.Basket
 import com.example.smartphone_shop.repository.retrofit.entities.CartResponseItem
@@ -36,7 +38,7 @@ class CartFragment : Fragment() {
     private lateinit var totalPriceTextView: TextView
     private lateinit var deliveryTextView: TextView
     private lateinit var cartAdapter: CartAdapter
-
+    private var fragmentClickListener: FragmentClickListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,10 +51,17 @@ class CartFragment : Fragment() {
 
         initView(view)
         showProgressBar()
+        initListener()
         initRv()
         initSubscribe()
 
         cartViewModel.getDetailInfo(getString(R.string.api_key))
+    }
+
+    private fun initListener() {
+        backButton.setOnClickListener {
+            fragmentClickListener?.onOpenDetailFragmentClick()
+        }
     }
 
     private fun initRv() {
@@ -127,6 +136,17 @@ class CartFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_cart, container, false)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentClickListener)
+            fragmentClickListener = context
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        fragmentClickListener = null
     }
 
     companion object {
