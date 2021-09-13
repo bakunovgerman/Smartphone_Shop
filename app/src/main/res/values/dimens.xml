@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="guide_line_margin">15dp</dimen>
+    <dimen name="bottom_navigation_view_height">60dp</dimen>
+    <dimen name="bottom_navigation_elevation">5dp</dimen>
+    <dimen name="point_margin_end">7dp</dimen>
+    <dimen name="explorer_text_size">15sp</dimen>
+    <dimen name="count_items_cart_width">14dp</dimen>
+    <dimen name="count_items_cart_height">14dp</dimen>
+    <dimen name="count_items_cart_text_size">9sp</dimen>
+    <dimen name="count_items_cart_margin_bottom">-5dp</dimen>
 </resources>
