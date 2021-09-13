@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fontFamily="@font/mark_pro_regular"
-    android:padding="16dp"
-    android:textSize="18sp"
+    android:padding="@dimen/drop_down_item_padding"
+    android:textSize="@dimen/drop_down_item_text_size"
     android:textColor="@color/cyan_dark"
     tools:text="TextView" />

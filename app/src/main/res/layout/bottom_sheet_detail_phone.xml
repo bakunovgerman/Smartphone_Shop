@@ -8,7 +8,7 @@
     android:layout_height="wrap_content"
     android:background="@color/white"
     app:behavior_hideable="false"
-    app:behavior_peekHeight="270dp"
+    app:behavior_peekHeight="@dimen/bottom_sheet_detail_phone_peek_height"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <androidx.core.widget.NestedScrollView
@@ -42,26 +42,26 @@
                 android:id="@+id/tvNamePhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/name_phone_margin_top"
                 android:fontFamily="@font/mark_pro_bold"
                 android:textColor="@color/cyan_dark"
-                android:textSize="25sp"
+                android:textSize="@dimen/name_phone_text_size"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Galaxy Note 20 Ultra" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFavorite"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="@dimen/favorite_btn_width"
+                android:layout_height="@dimen/favorite_btn_height"
                 android:backgroundTint="@color/cyan_dark"
-                android:insetLeft="0dp"
-                android:insetTop="0dp"
-                android:insetRight="0dp"
-                android:insetBottom="0dp"
+                android:insetLeft="@dimen/favorite_btn_inset_left"
+                android:insetTop="@dimen/favorite_btn_inset_top"
+                android:insetRight="@dimen/favorite_btn_inset_right"
+                android:insetBottom="@dimen/favorite_btn_inset_bottom"
                 app:icon="@drawable/ic_favorite_on_detail"
                 app:iconGravity="textStart"
-                app:iconPadding="0dp"
+                app:iconPadding="@dimen/favorite_btn_inset_icon_padding"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvNamePhone"
                 app:layout_constraintEnd_toStartOf="@id/guideLine_2" />
 
@@ -69,8 +69,8 @@
                 android:id="@+id/rbPhone"
                 style="@style/CustomRatingBarDetailMovie"
                 android:layout_width="wrap_content"
-                android:layout_height="15dp"
-                android:layout_marginTop="7dp"
+                android:layout_height="@dimen/phone_rating_bar_height"
+                android:layout_marginTop="@dimen/phone_rating_bar_margin_top"
                 android:numStars="5"
                 android:rating="3.5"
                 android:stepSize="0.5"
@@ -82,7 +82,7 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/tab_layout_detail_margin_top"
                 app:layout_constraintBottom_toTopOf="@+id/vp2DetailPhone"
                 app:layout_constraintEnd_toEndOf="@id/guideLine_2"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
@@ -92,23 +92,23 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/vp2DetailPhone"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/view_pager_detail_height"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tabLayout"
                 app:layout_constraintBottom_toTopOf="@id/tvTitleSelectColor"
-                android:layout_marginTop="35dp"/>
+                android:layout_marginTop="@dimen/view_pager_detail_margin_top"/>
 
             <TextView
                 android:id="@+id/tvTitleSelectColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Select color and capacity"
+                android:text="@string/select_color_and_capacity"
                 app:layout_constraintTop_toBottomOf="@id/vp2DetailPhone"
                 app:layout_constraintStart_toStartOf="@id/guideLine_1"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="@dimen/title_select_memory_margin_top"
                 android:fontFamily="@font/mark_pro_medium"
-                android:textSize="16sp"
+                android:textSize="@dimen/title_select_color_text_size"
                 android:textColor="@color/cyan_dark"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -121,7 +121,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tvTitleSelectColor"
                 app:layout_constraintStart_toEndOf="@id/guideLine_1"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="@dimen/rv_select_color_margin_top"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvSelectMemory"
@@ -133,19 +133,19 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@id/tvTitleSelectColor"
                 app:layout_constraintEnd_toStartOf="@id/guideLine_2"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="@dimen/rv_select_memory_margin_top"/>
 
             <Button
                 android:id="@+id/btnAddCart"
                 android:layout_width="0dp"
-                android:layout_height="55dp"
-                tools:text="Add to Cart $1,500.00"
+                android:layout_height="@dimen/add_to_cart_button_height"
+                tools:text="@string/add_to_cart_1500"
                 app:layout_constraintTop_toBottomOf="@id/rvSelectMemory"
                 app:layout_constraintStart_toEndOf="@id/guideLine_1"
                 app:layout_constraintEnd_toStartOf="@id/guideLine_2"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginTop="@dimen/add_to_cart_button_margin_top"
+                android:layout_marginBottom="@dimen/add_to_cart_button_margin_bottom"
                 android:fontFamily="@font/mark_pro_bold"
                 android:clickable="true"
                 android:foreground="?attr/selectableItemBackgroundBorderless"

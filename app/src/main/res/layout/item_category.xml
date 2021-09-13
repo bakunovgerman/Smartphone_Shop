@@ -8,13 +8,13 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/categoryItemCardView"
-        android:layout_width="71dp"
-        android:layout_height="71dp"
+        android:layout_width="@dimen/category_item_card_view_width"
+        android:layout_height="@dimen/category_item_card_view_height"
         app:cardBackgroundColor="@color/white"
         android:clickable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         android:focusable="true"
-        app:cardCornerRadius="100dp">
+        app:cardCornerRadius="@dimen/category_item_card_view_card_corner_radius">
 
         <ImageView
             android:id="@+id/iconCategory"
