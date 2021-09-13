@@ -158,7 +158,7 @@ class DetailFragment : Fragment() {
         })
         // кнопка назад
         backButton.setOnClickListener {
-            fragmentClickListener?.onOpenMainFragmentClick()
+            fragmentClickListener?.onBackFragmentClick()
         }
         // кнопка корзина
         cartButton.setOnClickListener {

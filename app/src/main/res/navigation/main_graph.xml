@@ -39,6 +39,10 @@
             android:id="@+id/action_cart_fragment_to_main_fragment"
             app:destination="@+id/mainFragment" />
 
+        <action
+            android:id="@+id/action_cart_fragment_to_detail_fragment"
+            app:destination="@+id/detailFragment" />
+
     </fragment>
 
 </navigation>

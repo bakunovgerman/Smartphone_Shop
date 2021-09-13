@@ -60,7 +60,7 @@ class CartFragment : Fragment() {
 
     private fun initListener() {
         backButton.setOnClickListener {
-            fragmentClickListener?.onOpenDetailFragmentClick()
+            fragmentClickListener?.onBackFragmentClick()
         }
     }
 

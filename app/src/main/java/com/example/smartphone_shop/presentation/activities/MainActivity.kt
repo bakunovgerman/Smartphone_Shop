@@ -85,8 +85,15 @@ class MainActivity : AppCompatActivity(), FragmentClickListener {
         navController.navigate(R.id.detailFragment)
     }
 
-    override fun onOpenMainFragmentClick() {
-        navController.navigate(R.id.mainFragment)
+    override fun onBackFragmentClick() {
+        if (navController.currentDestination?.id == R.id.detailFragment)
+            navController.navigate(R.id.mainFragment)
+        else if (navController.currentDestination?.id == R.id.cartFragment
+            && navController.previousBackStackEntry?.destination?.id == R.id.detailFragment)
+            navController.navigate(R.id.action_cart_fragment_to_detail_fragment)
+        else if (navController.currentDestination?.id == R.id.cartFragment
+            && navController.previousBackStackEntry?.destination?.id == R.id.mainFragment)
+            navController.popBackStack()
     }
 
     override fun onOpenCartFragmentClick() {
