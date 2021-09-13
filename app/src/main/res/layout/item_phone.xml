@@ -25,26 +25,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btnFavorite"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:cardCornerRadius="100dp"
+        <RadioButton
+            android:id="@+id/radioFavoriteBestSeller"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:background="@android:color/transparent"
+            android:drawablePadding="-5dp"
+            android:layout_marginTop="15dp"
+            android:button="@android:color/transparent"
+            android:drawableStart="@drawable/favourite_best_seller_selector"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="13dp"
-            android:clickable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:focusable="true">
-
-            <ImageView
-                android:id="@+id/imgBtnFavorite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_favorite_on"
-                android:layout_gravity="center"/>
-
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/tvPriceWithSale"
