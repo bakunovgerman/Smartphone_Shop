@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Galaxy Note 20 Ultra" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnFavorite"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -59,7 +59,7 @@
                 android:insetTop="0dp"
                 android:insetRight="0dp"
                 android:insetBottom="0dp"
-                app:icon="@drawable/ic_favorite_off"
+                app:icon="@drawable/ic_favorite_on_detail"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/tvNamePhone"

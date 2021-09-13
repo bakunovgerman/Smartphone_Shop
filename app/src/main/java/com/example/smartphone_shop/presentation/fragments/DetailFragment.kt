@@ -25,6 +25,7 @@ import com.example.smartphone_shop.presentation.adapter.PhoneImagesAdapter
 import com.example.smartphone_shop.presentation.helpers.FragmentClickListener
 import com.example.smartphone_shop.presentation.helpers.ViewStateScreen
 import com.example.smartphone_shop.repository.retrofit.entities.DetailInfoResponseItem
+import com.google.android.material.button.MaterialButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 
@@ -37,7 +38,7 @@ class DetailFragment : Fragment() {
     private lateinit var cartButton: Button
     private lateinit var phonePhotosViewPager2: ViewPager2
     private lateinit var namePhoneTextView: TextView
-    private lateinit var favoriteButton: Button
+    private lateinit var favoriteButton: MaterialButton
     private lateinit var phoneRatingBar: RatingBar
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager2
@@ -50,6 +51,7 @@ class DetailFragment : Fragment() {
     private lateinit var memoryRadioBtnAdapter: MemoryRadioBtnAdapter
     private lateinit var colorAdapter: ColorAdapter
     private var fragmentClickListener: FragmentClickListener? = null
+    private var isFavorite: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -112,6 +114,14 @@ class DetailFragment : Fragment() {
         addCartButton.text =
             String.format(getString(R.string.phone_price_add_cart_button), detailInfoResponseItem.price)
         colorAdapter.initData(detailInfoResponseItem.color)
+        favoriteButton.apply {
+            isFavorite = detailInfoResponseItem.isFavorites
+            if (isFavorite) {
+                setIconResource(R.drawable.ic_favorite_on_detail)
+            } else {
+                setIconResource(R.drawable.ic_favorite_off_detail)
+            }
+        }
     }
 
     private fun initView(view: View) {
@@ -163,6 +173,15 @@ class DetailFragment : Fragment() {
         // кнопка корзина
         cartButton.setOnClickListener {
             fragmentClickListener?.onOpenCartFragmentClick()
+        }
+        favoriteButton.setOnClickListener {
+            isFavorite = if (isFavorite) {
+                favoriteButton.setIconResource(R.drawable.ic_favorite_off_detail)
+                false
+            } else {
+                favoriteButton.setIconResource(R.drawable.ic_favorite_on_detail)
+                true
+            }
         }
     }
 
