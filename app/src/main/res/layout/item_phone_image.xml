@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:elevation="@dimen/card_view_item_phone_image_evelation"
         android:divider="@android:color/transparent"
-        android:dividerHeight="@dimen/card_view_item_phone_image_divider_height"
+        android:dividerHeight="0.0px"
         android:clipToPadding="false"
         android:clipChildren="false"
         card_view:cardElevation="@dimen/card_view_item_phone_image_card_elevation"
@@ -27,8 +27,8 @@
 
         <ImageView
             android:id="@+id/imgPhoneSlider"
-            android:layout_width="@dimen/phone_sllide_imageview_width"
-            android:layout_height="@dimen/phone_sllide_imageview_height"
+            android:layout_width="@dimen/phone_slide_imageview_width"
+            android:layout_height="@dimen/phone_slide_imageview_height"
             tools:srcCompat="@tools:sample/avatars"
             android:scaleType="centerCrop"
             android:layout_gravity="center_horizontal"/>

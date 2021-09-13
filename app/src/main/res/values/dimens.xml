@@ -238,7 +238,6 @@
     <dimen name="card_view_item_phone_image_evelation">8dp</dimen>
     <dimen name="card_view_item_phone_image_card_elevation">30dp</dimen>
     <dimen name="card_view_item_phone_image_corner_radius">20dp</dimen>
-    <dimen name="phone_sllide_imageview_width">270dp</dimen>
-    <dimen name="phone_sllide_imageview_height">335dp</dimen>
-    <item name="card_view_item_phone_image_divider_height" type="dimen" format="float">0.0px</item>
+    <dimen name="phone_slide_imageview_width">270dp</dimen>
+    <dimen name="phone_slide_imageview_height">335dp</dimen>
 </resources>
