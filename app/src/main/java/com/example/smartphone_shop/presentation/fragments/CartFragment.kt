@@ -75,7 +75,8 @@ class CartFragment : Fragment() {
     }
 
     private fun changeTotalPrice(price: Int) {
-        totalPriceTextView.text = String.format(getString(R.string.total_price_cart), price.toDouble())
+        totalPriceTextView.text =
+            String.format(getString(R.string.total_price_cart), price.toDouble())
     }
 
     private fun initSubscribe() {
@@ -85,8 +86,10 @@ class CartFragment : Fragment() {
 
     private fun setCartData(cartResponseItem: CartResponseItem) = with(cartResponseItem) {
         initDataRv(this.basket)
-        totalPriceTextView.text =  String.format(getString(R.string.total_price_cart),
-            this.total.toString())
+        totalPriceTextView.text = String.format(
+            getString(R.string.total_price_cart),
+            this.total.toString()
+        )
         deliveryTextView.text = this.delivery
     }
 
@@ -94,7 +97,12 @@ class CartFragment : Fragment() {
         cartAdapter.initData(basketList)
         Log.d("basketList", basketList.size.toString())
         if (rvItemsCart.itemDecorationCount == 0)
-            rvItemsCart.addItemDecoration(SpacesItemDecoration(spaceBottom = 45, size = basketList.size))
+            rvItemsCart.addItemDecoration(
+                SpacesItemDecoration(
+                    spaceBottom = 45,
+                    size = basketList.size
+                )
+            )
     }
 
     private fun initView(view: View) {

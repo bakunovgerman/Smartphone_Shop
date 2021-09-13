@@ -19,7 +19,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
 
     // init CoroutineExceptionHandler
     private val errorHandler = CoroutineExceptionHandler { _, error ->
@@ -27,19 +27,22 @@ class MainViewModel: ViewModel() {
     }
 
     // init LiveData
-        // category
+    // category
     val categoryList: LiveData<List<CategoryDto>> get() = _categoryList
     private val _categoryList = MutableLiveData<List<CategoryDto>>()
-        // mainInfo
+
+    // mainInfo
     val homeStore: LiveData<List<HomeStore>> get() = _homeStore
     private val _homeStore = MutableLiveData<List<HomeStore>>()
     val bestSeller: LiveData<List<BestSeller>> get() = _bestSeller
     private val _bestSeller = MutableLiveData<List<BestSeller>>()
     val viewState: LiveData<ViewStateScreen> get() = _viewState
     private val _viewState = MutableLiveData<ViewStateScreen>()
+
     // repositories
     private val categoryDataSourceImpl: CategoryDataSource = CategoryDataSourceImpl()
-    private val mainInfoRepositoryImpl: MainInfoRepository = MainInfoRepositoryImpl(App.instance.apiService)
+    private val mainInfoRepositoryImpl: MainInfoRepository =
+        MainInfoRepositoryImpl(App.instance.apiService)
 
     fun getCategory() {
         _categoryList.postValue(categoryDataSourceImpl.getCategory())

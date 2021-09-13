@@ -43,7 +43,8 @@ class MainActivity : AppCompatActivity(), FragmentClickListener {
     private fun initListener() {
         cartImageView.setOnClickListener {
             navController.navigate(R.id.cartFragment)
-            bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout)
+            bottomNavigationView.background =
+                ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout)
         }
     }
 
@@ -66,40 +67,45 @@ class MainActivity : AppCompatActivity(), FragmentClickListener {
     }
 
     override fun onBackPressed() {
-        if (navController.currentDestination?.id == R.id.detailFragment){
+        if (navController.currentDestination?.id == R.id.detailFragment) {
             navController.popBackStack()
-            bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
-        }
-        else {
+            bottomNavigationView.background =
+                ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
+        } else {
             super.onBackPressed()
         }
     }
 
     override fun onOpenDetailFragmentClick() {
         navController.navigate(R.id.detailFragment)
-        bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
+        bottomNavigationView.background =
+            ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
     }
 
     override fun onBackFragmentClick() {
-        if (navController.currentDestination?.id == R.id.detailFragment){
+        if (navController.currentDestination?.id == R.id.detailFragment) {
             navController.navigate(R.id.mainFragment)
-            bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
-        }
-        else if (navController.currentDestination?.id == R.id.cartFragment
-            && navController.previousBackStackEntry?.destination?.id == R.id.detailFragment) {
+            bottomNavigationView.background =
+                ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
+        } else if (navController.currentDestination?.id == R.id.cartFragment
+            && navController.previousBackStackEntry?.destination?.id == R.id.detailFragment
+        ) {
             navController.navigate(R.id.action_cart_fragment_to_detail_fragment)
-            bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
-        }
-        else if (navController.currentDestination?.id == R.id.cartFragment
-            && navController.previousBackStackEntry?.destination?.id == R.id.mainFragment) {
+            bottomNavigationView.background =
+                ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
+        } else if (navController.currentDestination?.id == R.id.cartFragment
+            && navController.previousBackStackEntry?.destination?.id == R.id.mainFragment
+        ) {
             navController.popBackStack()
-            bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
+            bottomNavigationView.background =
+                ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout_rounded)
         }
     }
 
     override fun onOpenCartFragmentClick() {
         navController.navigate(R.id.cartFragment)
-        bottomNavigationView.background = ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout)
+        bottomNavigationView.background =
+            ContextCompat.getDrawable(this, R.drawable.bg_bottom_navigation_layout)
     }
 
 }

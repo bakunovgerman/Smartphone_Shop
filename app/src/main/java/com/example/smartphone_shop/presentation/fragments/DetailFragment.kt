@@ -112,7 +112,10 @@ class DetailFragment : Fragment() {
             DetailViewPagerAdapter(parentFragmentManager, lifecycle, detailInfoResponseItem)
         memoryRadioBtnAdapter.initData(detailInfoResponseItem.capacity)
         addCartButton.text =
-            String.format(getString(R.string.phone_price_add_cart_button), detailInfoResponseItem.price)
+            String.format(
+                getString(R.string.phone_price_add_cart_button),
+                detailInfoResponseItem.price
+            )
         colorAdapter.initData(detailInfoResponseItem.color)
         favoriteButton.apply {
             isFavorite = detailInfoResponseItem.isFavorites

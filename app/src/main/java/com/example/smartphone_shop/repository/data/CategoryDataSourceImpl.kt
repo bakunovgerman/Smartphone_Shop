@@ -2,7 +2,7 @@ package com.example.smartphone_shop.repository.data
 
 import com.example.smartphone_shop.R
 
-class CategoryDataSourceImpl(): CategoryDataSource {
+class CategoryDataSourceImpl() : CategoryDataSource {
     override fun getCategory(): List<CategoryDto> = listOf(
         CategoryDto(
             icon = R.drawable.ic_smartphone,

@@ -18,7 +18,8 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.smartphone_shop.repository.retrofit.entities.Basket
 
 
-class CartAdapter(private val onTotalPriceChange: (Int) -> Unit) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
+class CartAdapter(private val onTotalPriceChange: (Int) -> Unit) :
+    RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
 
     private val list: MutableList<Basket> = ArrayList()
 
@@ -37,7 +38,7 @@ class CartAdapter(private val onTotalPriceChange: (Int) -> Unit) : RecyclerView.
 
         init {
             minusCountImageButton.setOnClickListener {
-                if (countTextView.text.toString().toInt() != 1){
+                if (countTextView.text.toString().toInt() != 1) {
                     countTextView.text = countTextView.text.toString().toInt().minus(1).toString()
                     totalPrice -= itemCart.price
                     Log.d("change_price", "total = $totalPrice")
@@ -73,7 +74,10 @@ class CartAdapter(private val onTotalPriceChange: (Int) -> Unit) : RecyclerView.
             countTextView.text = "1"
             nameProductTextView.text = basket.title
             priceProductTextView.text =
-                String.format(itemView.context.getString(R.string.price_item_cart), basket.price.toDouble())
+                String.format(
+                    itemView.context.getString(R.string.price_item_cart),
+                    basket.price.toDouble()
+                )
         }
     }
 

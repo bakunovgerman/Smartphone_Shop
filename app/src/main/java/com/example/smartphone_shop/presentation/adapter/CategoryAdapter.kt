@@ -23,6 +23,7 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>
             itemView.findViewById(R.id.categoryItemCardView)
         private val categoryButton: ImageView = itemView.findViewById(R.id.iconCategory)
         private val nameCategoryTextView: TextView = itemView.findViewById(R.id.tvNameCategory)
+
         // colors
         private val orangeColor = ContextCompat.getColor(itemView.context, R.color.orange)
         private val whiteColor = ContextCompat.getColor(itemView.context, R.color.white)

@@ -15,7 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class DetailViewModel: ViewModel() {
+class DetailViewModel : ViewModel() {
 
     // init CoroutineExceptionHandler
     private val errorHandler = CoroutineExceptionHandler { _, error ->
@@ -28,8 +28,10 @@ class DetailViewModel: ViewModel() {
     private val _detailInfo = MutableLiveData<DetailInfoResponseItem>()
     val viewState: LiveData<ViewStateScreen> get() = _viewState
     private val _viewState = MutableLiveData<ViewStateScreen>()
+
     // repositories
-    private val detailInfoRepository: DetailInfoRepository = DetailInfoRepositoryImpl(App.instance.apiService)
+    private val detailInfoRepository: DetailInfoRepository =
+        DetailInfoRepositoryImpl(App.instance.apiService)
 
     fun getDetailInfo(apiKey: String) {
         viewModelScope.launch(errorHandler) {

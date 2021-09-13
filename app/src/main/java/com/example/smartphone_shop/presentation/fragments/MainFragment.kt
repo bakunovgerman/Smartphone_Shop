@@ -99,17 +99,38 @@ class MainFragment : Fragment() {
         doneFilterButton = filtersBottomSheetView.findViewById(R.id.btnDoneFilters)
         filtersBottomSheetDialog.setContentView(filtersBottomSheetView)
         //init view BottomSheetDialog
-        brandAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.brandAutoCompleteTextView)
-        priceAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.priceAutoCompleteTextView)
-        sizeAutoCompleteTextView = filtersBottomSheetView.findViewById(R.id.sizeAutoCompleteTextView)
+        brandAutoCompleteTextView =
+            filtersBottomSheetView.findViewById(R.id.brandAutoCompleteTextView)
+        priceAutoCompleteTextView =
+            filtersBottomSheetView.findViewById(R.id.priceAutoCompleteTextView)
+        sizeAutoCompleteTextView =
+            filtersBottomSheetView.findViewById(R.id.sizeAutoCompleteTextView)
         // string arrays
         val brandArray = resources.getStringArray(R.array.brand_list)
         val priceArray = resources.getStringArray(R.array.price_list)
         val sizeArray = resources.getStringArray(R.array.size_list)
         // set adapters
-        brandAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, brandArray))
-        priceAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, priceArray))
-        sizeAutoCompleteTextView.setAdapter(ArrayAdapter(view.context, R.layout.dropdown_item, sizeArray))
+        brandAutoCompleteTextView.setAdapter(
+            ArrayAdapter(
+                view.context,
+                R.layout.dropdown_item,
+                brandArray
+            )
+        )
+        priceAutoCompleteTextView.setAdapter(
+            ArrayAdapter(
+                view.context,
+                R.layout.dropdown_item,
+                priceArray
+            )
+        )
+        sizeAutoCompleteTextView.setAdapter(
+            ArrayAdapter(
+                view.context,
+                R.layout.dropdown_item,
+                sizeArray
+            )
+        )
     }
 
     private fun initRv() {
