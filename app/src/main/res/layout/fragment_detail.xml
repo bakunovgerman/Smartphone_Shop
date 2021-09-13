@@ -89,4 +89,8 @@
         layout="@layout/loading_layout"
         android:visibility="invisible" />
 
+    <include layout="@layout/error_layout"
+        android:id="@+id/error_layout"
+        android:visibility="invisible"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -193,4 +193,8 @@
         android:id="@+id/progressBarLayout"
         android:visibility="invisible"/>
 
+    <include layout="@layout/error_layout"
+        android:id="@+id/error_layout"
+        android:visibility="invisible"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

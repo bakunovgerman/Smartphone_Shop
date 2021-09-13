@@ -52,6 +52,8 @@ class DetailFragment : Fragment() {
     private lateinit var colorAdapter: ColorAdapter
     private var fragmentClickListener: FragmentClickListener? = null
     private var isFavorite: Boolean = false
+    private lateinit var errorLayout: FrameLayout
+    private lateinit var retry: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -142,6 +144,8 @@ class DetailFragment : Fragment() {
         addCartButton = view.findViewById(R.id.btnAddCart)
         progressBarLayout = view.findViewById(R.id.progressBarLayout)
         detailBottomSheetBehavior = view.findViewById(R.id.bottom_sheet_detail_phone)
+        errorLayout = view.findViewById(R.id.error_layout)
+        retry = view.findViewById(R.id.retryBtn)
     }
 
     private fun initListener() {
@@ -186,6 +190,10 @@ class DetailFragment : Fragment() {
                 true
             }
         }
+        retry.setOnClickListener {
+            detailViewModel.getDetailInfo(getString(R.string.api_key))
+            errorLayout.visibility = View.INVISIBLE
+        }
     }
 
     private fun setViewState(viewStateScreen: ViewStateScreen) = with(viewStateScreen) {
@@ -206,8 +214,7 @@ class DetailFragment : Fragment() {
     }
 
     private fun showException(e: Throwable) {
-        Snackbar.make(mainFragmentRootLayout, getString(R.string.exception), Snackbar.LENGTH_LONG)
-            .show()
+        errorLayout.visibility = View.VISIBLE
     }
 
     override fun onAttach(context: Context) {

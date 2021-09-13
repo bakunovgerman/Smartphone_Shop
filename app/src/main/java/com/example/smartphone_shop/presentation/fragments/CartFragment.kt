@@ -39,6 +39,8 @@ class CartFragment : Fragment() {
     private lateinit var deliveryTextView: TextView
     private lateinit var cartAdapter: CartAdapter
     private var fragmentClickListener: FragmentClickListener? = null
+    private lateinit var errorLayout: FrameLayout
+    private lateinit var retry: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +63,10 @@ class CartFragment : Fragment() {
     private fun initListener() {
         backButton.setOnClickListener {
             fragmentClickListener?.onBackFragmentClick()
+        }
+        retry.setOnClickListener {
+            cartViewModel.getDetailInfo(getString(R.string.api_key))
+            errorLayout.visibility = View.INVISIBLE
         }
     }
 
@@ -114,6 +120,8 @@ class CartFragment : Fragment() {
         mainFragmentRootLayout = view.findViewById(R.id.fragmentCartRootView)
         cartBottomSheetBehavior = view.findViewById(R.id.bottom_sheet_cart)
         progressBarLayout = view.findViewById(R.id.progressBarLayout)
+        errorLayout = view.findViewById(R.id.error_layout)
+        retry = view.findViewById(R.id.retryBtn)
     }
 
     private fun setViewState(viewStateScreen: ViewStateScreen) = with(viewStateScreen) {
@@ -134,8 +142,7 @@ class CartFragment : Fragment() {
     }
 
     private fun showException(e: Throwable) {
-        Snackbar.make(mainFragmentRootLayout, getString(R.string.exception), Snackbar.LENGTH_LONG)
-            .show()
+        errorLayout.visibility = View.VISIBLE
     }
 
     override fun onCreateView(

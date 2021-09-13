@@ -45,6 +45,8 @@ class MainFragment : Fragment() {
     private lateinit var filtersButton: ImageButton
     private lateinit var closeFilterButton: Button
     private lateinit var doneFilterButton: Button
+    private lateinit var errorLayout: FrameLayout
+    private lateinit var retry: Button
 
     private var fragmentClickListener: FragmentClickListener? = null
 
@@ -74,7 +76,6 @@ class MainFragment : Fragment() {
         initRv()
         initSubscribe()
         loadData()
-
     }
 
     private fun initListener() {
@@ -86,6 +87,10 @@ class MainFragment : Fragment() {
         }
         doneFilterButton.setOnClickListener {
             filtersBottomSheetDialog.dismiss()
+        }
+        retry.setOnClickListener {
+            mainViewModel.getMainInfo(getString(R.string.api_key))
+            errorLayout.visibility = View.INVISIBLE
         }
     }
 
@@ -160,6 +165,8 @@ class MainFragment : Fragment() {
         homeStoreViewPager2 = view.findViewById(R.id.vp2HomeStore)
         progressBarLayout = view.findViewById(R.id.progressBarLayout)
         filtersButton = view.findViewById(R.id.btnFiltersShow)
+        errorLayout = view.findViewById(R.id.error_layout)
+        retry = view.findViewById(R.id.retryBtn)
     }
 
     private fun initCategoryData(listCategory: List<CategoryDto>) {
@@ -192,8 +199,7 @@ class MainFragment : Fragment() {
     }
 
     private fun showException(e: Throwable) {
-        Snackbar.make(mainFragmentRootLayout, getString(R.string.exception), Snackbar.LENGTH_LONG)
-            .show()
+        errorLayout.visibility = View.VISIBLE
     }
 
     private fun initSubscribe() {

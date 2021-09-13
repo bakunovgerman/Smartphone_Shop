@@ -89,4 +89,8 @@
         android:id="@+id/progressBarLayout"
         layout="@layout/loading_layout" />
 
+    <include layout="@layout/error_layout"
+        android:id="@+id/error_layout"
+        android:visibility="invisible"/>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
