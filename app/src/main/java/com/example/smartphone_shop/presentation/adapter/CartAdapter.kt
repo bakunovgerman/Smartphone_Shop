@@ -53,7 +53,7 @@ class CartAdapter(private val onTotalPriceChange: (Int) -> Unit) : RecyclerView.
             removeItemButton.setOnClickListener {
                 list.removeAt(adapterPosition)
                 notifyItemRemoved(adapterPosition)
-                totalPrice -= itemCart.price
+                totalPrice -= itemCart.price * countTextView.text.toString().toInt()
                 Log.d("change_price", "total = $totalPrice")
                 onTotalPriceChange.invoke(totalPrice)
             }
