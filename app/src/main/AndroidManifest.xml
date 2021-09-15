@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Smartphone_Shop">
         <activity
-            android:name=".presentation.activities.SplashActivity"
+            android:name=".features.splashScreen.presentation.activities.SplashActivity"
             android:theme="@style/SplashTheme"
             android:exported="true">
             <intent-filter>
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.activities.MainActivity"
+            android:name="com.example.smartphone_shop.activities.MainActivity"
             android:exported="true">
 
         </activity>

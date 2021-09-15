@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.smartphone_shop.presentation.fragments.MainFragment"
+        android:name="com.example.smartphone_shop.features.mainScreen.presentation.fragments.MainFragment"
         tools:layout="@layout/fragment_main">
 
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.smartphone_shop.presentation.fragments.DetailFragment"
+        android:name="com.example.smartphone_shop.features.detailsScreen.presentation.fragments.DetailFragment"
         tools:layout="@layout/fragment_detail">
 
         <action
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/cartFragment"
-        android:name="com.example.smartphone_shop.presentation.fragments.CartFragment"
+        android:name="com.example.smartphone_shop.features.cartScreen.presentation.fragments.CartFragment"
         tools:layout="@layout/fragment_cart">
 
         <action
